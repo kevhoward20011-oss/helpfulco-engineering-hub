@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HelpfulCo Engineering Hub | Kev Howard</title>
+  <meta name="description" content="Engineering portfolio for Kev Howard: AI governance, full-stack AI, voice, CRM, Flutter mobile, automation and reliability work, with evidence and limitations." />
+  <meta name="theme-color" content="#08131e" />
+  <meta property="og:title" content="HelpfulCo Engineering Hub | Kev Howard" />
+  <meta property="og:description" content="Engineering evidence, not claims: architecture, decisions, tests, incidents and honest limitations across real software builds." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Kev Howard","worksFor":{"@type":"Organization","name":"HelpfulCo Innovations"},"knowsAbout":["AI engineering","AI governance","Full-stack software","Systems integration","Flutter mobile development","Software reliability"]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="HelpfulCo Engineering Hub home"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Kev Howard · engineering evidence</small></span></a>
+      <nav class="nav-links" aria-label="Primary"><a href="#projects">Projects</a><a href="#roles">Role views</a><a href="#practice">Evidence standard</a></nav>
+    </div>
+  </header>
+  <div class="status-strip"><div class="container"><span class="dot"></span><span>Public portfolio build · evidence is labelled by what is actually proven</span></div></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker">Engineering evidence, not claims</div>
+            <h1>Show the work.<br/>Explain the decisions.</h1>
+            <p>I am a self-taught software builder who has designed, debugged, tested and shipped systems across AI, full-stack integration, mobile and reliability engineering. This Hub is the evidence layer behind that statement.</p>
+            <div class="hero-actions"><a class="btn primary" href="governor.html">Open Governor case study →</a><a class="btn ghost" href="#projects">Browse all work</a></div>
+          </div>
+          <aside class="hero-note" aria-label="How to read this portfolio">
+            <div class="eyebrow">How to read this Hub</div>
+            <strong>Every project is built around three engineering problems.</strong>
+            <p>Each case shows the constraint, the decision, evidence available now, and what still needs verification. Private code stays private; enough architecture and selected references are exposed to make the work inspectable.</p>
+          </aside>
+        </div>
+
+        <div class="proof-bar">
+          <div class="proof"><strong>Architecture</strong><span>components, boundaries and data flow</span></div>
+          <div class="proof"><strong>Problem solving</strong><span>constraint → investigation → decision</span></div>
+          <div class="proof"><strong>Verification</strong><span>tests, releases, audits and known limits</span></div>
+          <div class="proof"><strong>Production thinking</strong><span>security, recovery and operating cost</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roles" class="role-section">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Role-specific views</div><h2>Same evidence. Different starting point.</h2></div><p>Use a filter to put the most relevant work first without creating five different portfolios.</p></div>
+        <div class="role-links" aria-label="Role views">
+          <a href="?role=all#projects" data-role-link="all">All work</a>
+          <a href="?role=software#projects" data-role-link="software">Software</a>
+          <a href="?role=ai#projects" data-role-link="ai">AI / Agentic</a>
+          <a href="?role=integration#projects" data-role-link="integration">Integration</a>
+          <a href="?role=mobile#projects" data-role-link="mobile">Mobile</a>
+          <a href="?role=quality#projects" data-role-link="quality">Reliability</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Flagship builds</div><h2>Six systems. Three problems each.</h2></div><p>Click any project. The detail page separates repository/document evidence from design rationale and work that still needs a fresh runtime check.</p></div>
+        <div class="filters" aria-label="Filter flagship projects">
+          <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="software">Software</button><button class="filter" data-filter="ai">AI</button><button class="filter" data-filter="integration">Integration</button><button class="filter" data-filter="mobile">Mobile</button><button class="filter" data-filter="quality">Reliability</button>
+        </div>
+        <div class="grid" id="flagship-grid">
+          <a class="card feature-card" href="governor.html" data-roles="ai software integration quality" data-project="governor">
+            <div class="status verified">● Forensic code audit available</div>
+            <h3>Fresh Direction / Sovereign AI Governor</h3>
+            <p>Evidence-first AI governance: authority decisions, human approval, hard execution boundaries, fail-closed behaviour, audit and recovery.</p>
+            <div class="card-footer"><div class="tags"><span class="tag">Python</span><span class="tag">AI governance</span><span class="tag">Security</span><span class="tag">Audit</span></div><span class="arrow">Open →</span></div>
+          </a>
+
+          <a class="card" href="project.html?id=amara" data-roles="software integration ai" data-project="amara">
+            <div class="status verified">● Current repository evidence</div><h3>Amara Assistant</h3><p>Customer-facing AI assistance, knowledge boundaries, enquiry capture and a joined-up route into CRM and human handoff.</p>
+            <div class="card-footer"><div class="tags"><span class="tag">Next.js</span><span class="tag">AI</span><span class="tag">APIs</span></div><span class="arrow">Open →</span></div>
+          </a>
+
+          <a class="card" href="project.html?id=receptionist" data-roles="ai integration software" data-project="receptionist">
+            <div class="status verified">● Current repository evidence</div><h3>AI Receptionist</h3><p>Browser voice, multilingual flows and a cost-aware language architecture with browser/device capability used where practical.</p>
+            <div class="card-footer"><div class="tags"><span class="tag">Voice AI</span><span class="tag">Browser</span><span class="tag">Cost design</span></div><span class="arrow">Open →</span></div>
+          </a>
+
+          <a class="card" href="project.html?id=crm" data-roles="software integration quality" data-project="crm">
+            <div class="status verified">● Current repository evidence</div><h3>CRM / Office Suite</h3><p>Tenant-isolated customer workspace, CRM ingestion, task/follow-up workflows, integrations and operational security controls.</p>
+            <div class="card-footer"><div class="tags"><span class="tag">Supabase</span><span class="tag">CRM</span><span class="tag">Security</span></div><span class="arrow">Open →</span></div>
+          </a>
+
+          <a class="card" href="project.html?id=diary" data-roles="mobile software quality" data-project="diary">
+            <div class="status verified">● Shipped baseline evidence</div><h3>Put It In My Diary</h3><p>Released Flutter family planner with persistence, notifications, private-event PIN protection and mobile release engineering.</p>
+            <div class="card-footer"><div class="tags"><span class="tag">Flutter</span><span class="tag">Mobile</span><span class="tag">Persistence</span></div><span class="arrow">Open →</span></div>
+          </a>
+
+          <a class="card" href="project.html?id=fieldops" data-roles="mobile software quality" data-project="fieldops">
+            <div class="status wip">● Work in progress</div><h3>Field Operations App</h3><p>Controlled transformation of proven Diary foundations into a field-operations app with visit state, multi-display records and fresh camera evidence.</p>
+            <div class="card-footer"><div class="tags"><span class="tag">Flutter</span><span class="tag">Field workflow</span><span class="tag">Recovery</span></div><span class="arrow">Open →</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="side-projects">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Side projects</div><h2>Systems depth without crowding the main story.</h2></div><p>These are deliberately smaller. They expose useful architectural thinking while keeping current-runtime claims conservative until re-verification.</p></div>
+        <div class="side-grid">
+          <a class="side-card" href="project.html?id=coder"><div class="status recheck">● Recheck before stronger claim</div><h3>Standalone Coder</h3><p>Rotating model/provider adapters preserve the core coding workflow while containing provider-specific behaviour.</p><span class="arrow small">Open →</span></a>
+          <a class="side-card" href="project.html?id=trading"><div class="status recheck">● Engineering evidence only</div><h3>Trading System</h3><p>Multi-bot environment separation, research/backtest boundaries, recovery and configuration provenance — not a profitability showcase.</p><span class="arrow small">Open →</span></a>
+          <a class="side-card" href="project.html?id=botdoc"><div class="status recheck">● Current runtime recheck required</div><h3>Bot Doc</h3><p>Automated health, validation, optimisation gates, rollback and recovery evidence around the trading environment.</p><span class="arrow small">Open →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="practice">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Evidence standard</div><h2>A claim only gets stronger when the evidence does.</h2></div><p>The Hub distinguishes shipped/live evidence, current repository evidence, historical documentation and work still requiring re-verification.</p></div>
+        <div class="practice">
+          <div class="practice-panel">
+            <h3>Case-file format</h3>
+            <ul><li><strong>Problem:</strong> what failed, mattered or needed a deliberate trade-off.</li><li><strong>Constraint:</strong> the technical, safety, cost or delivery condition.</li><li><strong>Decision:</strong> the architecture or implementation choice.</li><li><strong>Evidence:</strong> repository reference, test, release, audit or live demonstration.</li><li><strong>Limitation:</strong> what remains unproven, historical or deliberately out of scope.</li></ul>
+          </div>
+          <div class="practice-panel">
+            <div class="level"><strong>Live / shipped</strong><span>public product, store release or functioning deployed service</span></div>
+            <div class="level"><strong>Repository</strong><span>current implementation and named tests exist; does not imply tests were rerun today</span></div>
+            <div class="level"><strong>Audit</strong><span>read-only forensic inspection tied to branch/commit or source snapshot</span></div>
+            <div class="level"><strong>Historical</strong><span>useful evidence that must be labelled with its date and scope</span></div>
+            <div class="level"><strong>WIP / recheck</strong><span>design or implementation exists but stronger public wording waits for verification</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Evidence build · 25 September 2026</span></div></footer>
+  <script src="projects.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
