@@ -19,20 +19,20 @@
         <div class="breadcrumb"><a href="index.html">Engineering Hub</a> / Fresh Direction</div>
         <div class="kicker" style="margin-top:22px">AI governance · Python · reliability</div>
         <h1 class="case-title">Fresh Direction /<br/>Sovereign AI Governor</h1>
-        <p class="case-subtitle">A governance layer designed to stop an AI recommendation becoming a consequential action unless evidence, authority, policy and - where required - human approval are present. The strongest engineering story is not the UI; it is the controlled decision and execution path.</p>
+        <p class="case-subtitle">A governance layer designed to stop an AI recommendation becoming a consequential action unless evidence, authority, policy and — where required — human approval are present. The strongest engineering story is not the UI; it is the controlled decision and execution path.</p>
         <div class="meta-grid">
           <div class="meta"><label>Audit repository</label><strong>fresh-direction-dev</strong></div>
           <div class="meta"><label>Audit branch</label><strong>governor/demo-dashboard-phase8-9-integration</strong></div>
           <div class="meta"><label>Audit HEAD</label><strong>fc89c0a1…f1b8</strong></div>
           <div class="meta"><label>Runtime observed</label><strong>Python 3.12.10</strong></div>
         </div>
-        <div class="notice"><strong>Evidence rule:</strong> this first Hub page uses a read-only forensic repository audit. It does not claim a fresh full-suite pass count because that suite was not executed during the audit. Static test inventory is not presented as an executed result.</div>
+        <div class="notice"><strong>Evidence rule:</strong> this Hub page uses a read-only forensic repository audit. It does not claim a fresh full-suite pass count because that suite was not executed during the audit. Static test inventory is not presented as an executed result.</div>
       </div>
     </section>
 
     <section id="problems">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Three engineering problems</div><h2>What this project is worth discussing in an interview.</h2></div><p>Each problem is framed around a technical constraint, the architecture used to handle it, what worked in the implementation, and what is currently evidenced.</p></div>
+        <div class="section-head"><div><div class="kicker">Three engineering problems</div><h2>Why this project is worth discussing in an interview.</h2></div><p>Each problem is framed around a technical constraint, the architecture used to handle it, what worked in the implementation, and what is currently evidenced.</p></div>
         <div class="problem-grid">
           <article class="problem"><div class="num">01</div><h3>How do you stop an AI proposal bypassing human authority?</h3><p>Separate decisioning from execution. The Decision Centre is non-executing; approval state and authority are carried into a bridge; the HardToolGateway remains the execution-authorisation boundary.</p><div class="evidence-note"><strong>What worked:</strong> The implementation keeps a decision or recommendation from becoming execution merely because the AI proposed it; the path into execution remains a separate, inspectable authorisation boundary.</div><div class="status verified">● Static implementation evidence</div></article>
           <article class="problem"><div class="num">02</div><h3>How do you fail closed when evidence or approval is missing?</h3><p>The core lifecycle represents allowed, approval-required, blocked, malformed and unknown states. Execution security includes restricted/emergency safe states and approval consumption/replay controls rather than assuming success.</p><div class="evidence-note"><strong>What worked:</strong> Missing, malformed or unapproved states have explicit non-executing outcomes, so the system has a defined safe path instead of relying on optimistic fall-through.</div><div class="status verified">● Static implementation evidence</div></article>
