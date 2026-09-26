@@ -14,7 +14,10 @@
   document.getElementById('top-status').textContent = project.status;
 
   const status = `<div class="status ${project.statusClass || 'recheck'}">● ${project.status}</div>`;
-  const problems = project.problems.map((p, i) => `<article class="problem"><div class="num">0${i+1}</div><h3>${p.title}</h3><p>${p.body}</p><div class="evidence-note"><strong>Evidence:</strong> ${p.evidence}</div></article>`).join('');
+  const problems = project.problems.map((p, i) => {
+    const worked = p.whatWorked ? `<div class="evidence-note"><strong>What worked:</strong> ${p.whatWorked}</div>` : '';
+    return `<article class="problem"><div class="num">0${i+1}</div><h3>${p.title}</h3><p>${p.body}</p>${worked}<div class="evidence-note"><strong>Evidence:</strong> ${p.evidence}</div></article>`;
+  }).join('');
   const refs = (project.references || []).map(r => `<tr><td>${r[0]}</td><td><code>${r[1]}</code></td><td>${r[2]}</td></tr>`).join('');
   const limits = (project.limitations || []).map(l => `<div class="limit-card"><p>${l}</p></div>`).join('');
   const links = (project.liveLinks || []).map(l => `<a class="btn ghost external" target="_blank" rel="noopener noreferrer" href="${l.url}">${l.label} ↗</a>`).join('');
@@ -30,7 +33,7 @@
     </div></section>
 
     <section id="problems"><div class="container">
-      <div class="section-head"><div><div class="kicker">Three engineering problems</div><h2>What this build demonstrates.</h2></div><p>The point is not a feature list. It is the judgement used when cost, reliability, safety, lifecycle or data constraints mattered.</p></div>
+      <div class="section-head"><div><div class="kicker">Three engineering problems</div><h2>What this build demonstrates.</h2></div><p>The point is not a feature list. It is the judgement used when cost, reliability, safety, lifecycle or data constraints mattered — and what actually worked when the decision was implemented.</p></div>
       <div class="problem-grid">${problems}</div>
     </div></section>
 
