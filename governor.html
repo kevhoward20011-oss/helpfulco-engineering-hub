@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fresh Direction / Sovereign AI Governor | Engineering Case Study</title>
+  <meta name="description" content="Engineering evidence case study for the Fresh Direction / Sovereign AI Governor." />
+  <meta name="theme-color" content="#08131e" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Kev Howard · engineering evidence</small></span></a><nav class="nav-links"><a href="index.html#projects">Projects</a><a href="#problems">Problems</a><a href="#evidence">Evidence</a></nav></div></header>
+  <div class="status-strip"><div class="container"><span class="dot"></span><span>Static forensic evidence available · current full test pass count deliberately not claimed</span></div></div>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Engineering Hub</a> / Fresh Direction</div>
+        <div class="kicker" style="margin-top:22px">AI governance · Python · reliability</div>
+        <h1 class="case-title">Fresh Direction /<br/>Sovereign AI Governor</h1>
+        <p class="case-subtitle">A governance layer designed to stop an AI recommendation becoming a consequential action unless evidence, authority, policy and - where required - human approval are present. The strongest engineering story is not the UI; it is the controlled decision and execution path.</p>
+        <div class="meta-grid">
+          <div class="meta"><label>Audit repository</label><strong>fresh-direction-dev</strong></div>
+          <div class="meta"><label>Audit branch</label><strong>governor/demo-dashboard-phase8-9-integration</strong></div>
+          <div class="meta"><label>Audit HEAD</label><strong>fc89c0a1…f1b8</strong></div>
+          <div class="meta"><label>Runtime observed</label><strong>Python 3.12.10</strong></div>
+        </div>
+        <div class="notice"><strong>Evidence rule:</strong> this first Hub page uses a read-only forensic repository audit. It does not claim a fresh full-suite pass count because that suite was not executed during the audit. Static test inventory is not presented as an executed result.</div>
+      </div>
+    </section>
+
+    <section id="problems">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Three engineering problems</div><h2>What this project is worth discussing in an interview.</h2></div><p>Each problem is framed around a technical constraint, the architecture used to handle it, and what is currently evidenced.</p></div>
+        <div class="problem-grid">
+          <article class="problem"><div class="num">01</div><h3>How do you stop an AI proposal bypassing human authority?</h3><p>Separate decisioning from execution. The Decision Centre is non-executing; approval state and authority are carried into a bridge; the HardToolGateway remains the execution-authorisation boundary.</p><div class="status verified">● Static implementation evidence</div></article>
+          <article class="problem"><div class="num">02</div><h3>How do you fail closed when evidence or approval is missing?</h3><p>The core lifecycle represents allowed, approval-required, blocked, malformed and unknown states. Execution security includes restricted/emergency safe states and approval consumption/replay controls rather than assuming success.</p><div class="status verified">● Static implementation evidence</div></article>
+          <article class="problem"><div class="num">03</div><h3>How do you prove what happened after the decision?</h3><p>Authenticated evidence, authoritative SQLite state, MAC/hash-linked audit records, checkpoints and append-only ledger primitives create an evidence trail that can be inspected and reconstructed.</p><div class="status verified">● Static implementation evidence</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Architecture snapshot</div><h2>Decision first. Execution last.</h2></div><p>A simplified view of the audited governance path. This public view keeps the decision path inspectable in text while the underlying repository remains private.</p></div>
+        <div class="flow">
+          <span>Governance request</span><b>→</b><span>Evidence</span><b>→</b><span>Assessment</span><b>→</b><span>Policy decision</span><b>→</b><span>Authority</span><b>→</b><span>Human approval when required</span><b>→</b><span>HardToolGateway</span><b>→</b><span>Execution result</span><b>→</b><span>Independent verification</span><b>→</b><span>Final audit record</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Repository evidence</div><h2>Selected implementation references.</h2></div><p>These references make the case study inspectable without dumping a private repository or pretending the static audit is a live certification.</p></div>
+        <table class="evidence-table">
+          <thead><tr><th>Engineering concern</th><th>Implementation evidence</th><th>What it supports</th></tr></thead>
+          <tbody>
+            <tr><td>Governance lifecycle</td><td><code>runtime/governor/level1.py</code></td><td>Request → evidence → assessment → policy → authorisation → approval → execution → verification → audit; explicit blocked/approval-required states.</td></tr>
+            <tr><td>Human decision workflow</td><td><code>runtime/governor/decision_centre.py</code><br/><code>runtime/governor/decision_workflow.py</code></td><td>Durable review/approval flow, escalation/expiry and fail-closed workflow states.</td></tr>
+            <tr><td>Hard execution boundary</td><td><code>runtime/governor/decision_execution_bridge.py</code><br/><code>runtime/governor/tool_gateway.py</code></td><td>Separates non-executing decisions from the gateway that issues execution authorisation.</td></tr>
+            <tr><td>Execution safety / replay</td><td><code>runtime/governor/execution_security.py</code></td><td>Normal/restricted/emergency-safe states, approval consumption, recovery and replay controls.</td></tr>
+            <tr><td>Authority & evidence authenticity</td><td><code>runtime/governor/authority.py</code><br/><code>runtime/governor/evidence_security.py</code></td><td>Trusted principals, authority sessions, evidence freshness/provenance and replay/conflict states.</td></tr>
+            <tr><td>Audit & recovery record</td><td><code>runtime/governor/authoritative_store.py</code><br/><code>runtime/governor/ledger.py</code></td><td>SQLite state transactions, digests/MACs/checkpoints plus append-only/hash-chain primitives.</td></tr>
+            <tr><td>Constitution / policy binding</td><td><code>runtime/governor/constitution.py</code><br/><code>runtime/governor/constitutional_release.py</code><br/><code>runtime/governor/policy_assurance.py</code></td><td>Constitution lifecycle, release digests and policy/version approval concepts.</td></tr>
+            <tr><td>Safe demonstration path</td><td><code>runtime/governor/agent_runtime.py</code><br/><code>runtime/governor/demo_runtime.py</code></td><td>Proposal states including blocked/awaiting-human/denied and simulated local demo tools.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Test evidence</div><h2>Where the verification work lives.</h2></div><p>The forensic pass identified the relevant suites but intentionally did not convert test definitions or historical reports into a new “tests passed” claim.</p></div>
+        <div class="callout">Relevant suites include <code>test_level1_approval_authorization.py</code>, <code>test_level1_deterministic_assessment.py</code>, <code>test_decision_execution_bridge.py</code>, <code>test_phase2_execution_security.py</code>, <code>test_phase2d_approval_authorization_assurance.py</code>, <code>test_phase2e_restart_recovery_fail_closed.py</code>, <code>test_evidence_contract.py</code>, <code>test_phase3_evidence_verification.py</code>, <code>test_phase4_authoritative_store.py</code>, <code>test_constitutional_assurance.py</code> and <code>test_constitutional_release.py</code>.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Credibility matters</div><h2>Known limitations stay visible.</h2></div><p>A good engineering portfolio should show the edge of the evidence, not smooth it away.</p></div>
+        <div class="limits">
+          <div class="limit-card"><h3>Fresh full-suite status not established by this audit</h3><p>The audit was read-only and did not execute the current test suite. No current pass total is claimed here.</p></div>
+          <div class="limit-card"><h3>Static concerns still require targeted verification</h3><p>The audit flagged areas including payload-digest propagation, caller-controlled authority/time and execution-expiry handling for follow-up before any stronger public assurance claim.</p></div>
+          <div class="limit-card"><h3>Live action remains outside this demo story</h3><p>The employer demo should stay local/simulated and demonstrate the governance boundary rather than enabling live apply or live trading.</p></div>
+          <div class="limit-card"><h3>Private implementation stays private</h3><p>The Hub exposes architecture and selected evidence references, not the full private codebase.</p></div>
+        </div>
+        <div class="hero-actions" style="margin-top:28px"><a class="btn primary" href="index.html#projects">← Back to project set</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Governor audit snapshot · 25 September 2026</span></div></footer>
+</body>
+</html>
