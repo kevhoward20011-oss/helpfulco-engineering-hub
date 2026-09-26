@@ -50,7 +50,7 @@ window.HUB_PROJECTS = {
   diary: {
     title: "Put It In My Diary",
     strap: "Flutter · mobile lifecycle · privacy",
-    status: "Shipped baseline evidence · current aggregate test count should be refreshed before publication",
+    status: "Shipped baseline evidence · current aggregate test count intentionally not claimed until refreshed",
     statusClass: "verified",
     intro: "A released Flutter family planner. The strongest engineering stories are the lifecycle problems underneath the calendar: private-event access, notification routing, persistence and release discipline.",
     evidenceDate: "Project evidence reviewed 26 September 2026",
@@ -105,7 +105,7 @@ window.HUB_PROJECTS = {
       {title:"How do you recover after disk, machine or configuration problems?", body:"Treat backup, environment reconstruction, provenance and known-good baselines as part of the system.", whatWorked:"Recovery work produced identifiable baselines and retained configuration/recovery records, turning machine failure into a reconstruction problem rather than an undocumented restart from scratch.", evidence:"Recovery records exist and should be tied to the currently recoverable environment before stronger claims."}
     ],
     references: [["Scope rule","Engineering Hub proposal","Use architecture, separation, recovery and risk control — not profit — as evidence."]],
-    limitations: ["No profitability or trading-performance claim is made.","Current live execution state must be independently rechecked before publication."]
+    limitations: ["No profitability or trading-performance claim is made.","Current live execution state must be rechecked before any current live-execution claim is made."]
   },
   botdoc: {
     title: "Bot Doc",
