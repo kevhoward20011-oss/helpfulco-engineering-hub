@@ -5,10 +5,11 @@
   const root = document.getElementById('project-root');
   if (!project) {
     document.title = 'Project not found | HelpfulCo Engineering Hub';
-    root.innerHTML = '<section class="case-hero"><div class="container"><div class="kicker">Project not found</div><h1 class="case-title">That case study is not available.</h1><div class="hero-actions"><a class="btn primary" href="index.html#projects">Back to projects</a></div></div></section>';
+    root.innerHTML = '<section class="case-hero"><div class="container"><div class="kicker">Project not found</div><h1 class="case-title">That case study is not available.</h1><p class="case-subtitle">The requested project key is not part of the current evidence build.</p><div class="hero-actions"><a class="btn primary" href="index.html#projects">Back to projects</a></div></div></section>';
     return;
   }
 
+  document.body.dataset.project = id;
   document.title = `${project.title} | HelpfulCo Engineering Hub`;
   document.querySelector('meta[name="description"]').setAttribute('content', project.intro);
   document.getElementById('top-status').textContent = project.status;
@@ -17,7 +18,12 @@
   const problems = project.problems.map((p, i) => `<article class="problem"><div class="num">0${i+1}</div><h3>${p.title}</h3><p>${p.body}</p><div class="evidence-note"><strong>Evidence:</strong> ${p.evidence}</div></article>`).join('');
   const refs = (project.references || []).map(r => `<tr><td>${r[0]}</td><td><code>${r[1]}</code></td><td>${r[2]}</td></tr>`).join('');
   const limits = (project.limitations || []).map(l => `<div class="limit-card"><p>${l}</p></div>`).join('');
-  const links = (project.liveLinks || []).map(l => `<a class="btn ghost external" target="_blank" rel="noopener noreferrer" href="${l.url}">${l.label} ↗</a>`).join('');
+  const links = (project.liveLinks || []).filter(l => l && l.url).map(l => `<a class="btn ghost external" target="_blank" rel="noopener noreferrer" href="${l.url}">${l.label} ↗</a>`).join('');
+  const facts = `<div class="case-facts" aria-label="Case study evidence summary">
+    <div class="case-fact"><span>Engineering problems</span><strong>${project.problems.length}</strong></div>
+    <div class="case-fact"><span>Evidence references</span><strong>${(project.references || []).length}</strong></div>
+    <div class="case-fact"><span>Known limits</span><strong>${(project.limitations || []).length}</strong></div>
+  </div>`;
 
   root.innerHTML = `
     <section class="case-hero"><div class="container">
@@ -27,6 +33,7 @@
       <p class="case-subtitle">${project.intro}</p>
       <div class="case-status-row">${status}<span class="evidence-date">${project.evidenceDate}</span></div>
       <div class="hero-actions">${links}<a class="btn ghost" href="#problems">See the engineering problems ↓</a></div>
+      ${facts}
     </div></section>
 
     <section id="problems"><div class="container">
