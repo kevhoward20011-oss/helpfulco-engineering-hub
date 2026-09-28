@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI-Assisted Software Repair Lab | HelpfulCo Engineering Hub</title>
-  <meta name="description" content="Evidence-led software repair cases showing how AI coding tools were used to reproduce, diagnose, repair and verify real defects across mature open-source codebases." />
+  <title>Software Repair & Rescue | HelpfulCo Engineering Hub</title>
+  <meta name="description" content="Evidence-led software repair cases showing how real defects were reproduced, diagnosed, repaired and verified, with AI tools used as part of a supervised engineering process." />
   <meta name="theme-color" content="#08131e" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,53 +13,53 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Kev Howard · engineering evidence</small></span></a>
-      <nav class="nav-links" aria-label="Primary"><a href="index.html#projects">Projects</a><a href="#method">Method</a><a href="#cases">Repair cases</a><a href="#commercial">What this proves</a></nav>
+      <nav class="nav-links" aria-label="Primary"><a href="index.html#projects">Projects</a><a href="#method">Method</a><a href="#cases">Repair cases</a><a href="#commercial">Software rescue</a></nav>
     </div>
   </header>
-  <div class="status-strip"><div class="container"><span class="dot"></span><span>Verified repair evidence · upstream answers kept hidden until the AI solver finished</span></div></div>
+  <div class="status-strip"><div class="container"><span class="dot"></span><span>Verified repair evidence · broken state recorded before repair · reference answers kept separate until solver work finished</span></div></div>
 
   <main id="main">
     <section class="case-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Engineering Hub</a> / AI-Assisted Software Repair Lab</div>
-        <div class="kicker" style="margin-top:22px">AI coding tools · debugging · verification · software rescue</div>
-        <h1 class="case-title">AI-Assisted Software Repair Lab</h1>
-        <p class="case-subtitle">The question was simple: can modern AI coding tools do more than generate demo code? We tested them on broken states from mature software projects, required a reproducible failure first, kept the reference repair hidden, then verified the proposed fix with real tests and runtime evidence.</p>
+        <div class="breadcrumb"><a href="index.html">Engineering Hub</a> / Software Repair & Rescue</div>
+        <div class="kicker" style="margin-top:22px">Software debugging · repair · verification · AI-assisted engineering</div>
+        <h1 class="case-title">Broken software in. Tested repair out.</h1>
+        <p class="case-subtitle">The customer problem is not “I need AI coding”. It is “something important is broken and I need it working again.” These cases show the process: reproduce the failure, isolate the cause, use modern engineering and AI tools where they help, then verify the repair before calling it done.</p>
         <div class="case-status-row"><div class="status verified">● Four repair cases completed or verified against the reproduced failure</div><span class="evidence-date">Evidence updated 28 September 2026</span></div>
-        <div class="hero-actions"><a class="btn primary" href="#cases">See the repair cases ↓</a><a class="btn ghost" href="#commercial">Why this matters commercially</a></div>
+        <div class="hero-actions"><a class="btn primary" href="#cases">See the repair evidence ↓</a><a class="btn ghost" href="#commercial">How software rescue works</a></div>
       </div>
     </section>
 
     <section id="method">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Why we did it</div><h2>Test the engineering process, not the sales claim.</h2></div><p>Instead of saying “AI can code”, we wanted evidence that AI tools can help investigate unfamiliar code, work through real failures and produce repairs that survive verification.</p></div>
+        <div class="section-head"><div><div class="kicker">Why we did it</div><h2>Prove the repair process, not the tool.</h2></div><p>Anyone can open an AI coding tool. The useful question is whether a broken system can be understood, repaired and verified without blindly trusting the first answer.</p></div>
         <div class="practice">
           <div class="practice-panel">
-            <h3>The method</h3>
+            <h3>The repair method</h3>
             <ul>
-              <li><strong>Start from a real issue or benchmark:</strong> use a known broken state from an established project.</li>
-              <li><strong>Reproduce the defect first:</strong> no repair attempt counts until the failure is visible locally.</li>
-              <li><strong>Protect the broken baseline:</strong> pin the commit and record the failure evidence.</li>
-              <li><strong>Keep the reference answer hidden:</strong> the AI solver works from the repository and failure evidence, not the upstream patch.</li>
-              <li><strong>Verify the repair:</strong> rerun the focused test or production reproduction and check wider regressions where practical.</li>
-              <li><strong>Review AI output:</strong> a passing first attempt is not automatically trusted; gaps are challenged and corrected.</li>
+              <li><strong>Start from a real failure:</strong> use a known broken state from an established project.</li>
+              <li><strong>Reproduce it first:</strong> no repair attempt counts until the failure is visible locally.</li>
+              <li><strong>Protect the baseline:</strong> pin the commit and record the failure evidence.</li>
+              <li><strong>Keep the reference answer hidden:</strong> the coding agent works from the repository and failure evidence, not the upstream patch.</li>
+              <li><strong>Repair the smallest relevant surface:</strong> avoid unrelated refactors and dependency changes just to make the symptom disappear.</li>
+              <li><strong>Verify before accepting:</strong> rerun the focused failure, wider checks where practical, and record limitations honestly.</li>
             </ul>
           </div>
           <div class="practice-panel">
-            <h3>Tools used</h3>
-            <div class="level"><strong>ChatGPT</strong><span>problem framing, environment reconstruction, independent review and evidence discipline</span></div>
+            <h3>Where AI fits</h3>
+            <div class="level"><strong>ChatGPT</strong><span>problem framing, environment reconstruction, review and evidence discipline</span></div>
             <div class="level"><strong>OpenCode</strong><span>repository-level coding workflow and controlled repair environment</span></div>
-            <div class="level"><strong>Space Bunny</strong><span>independent AI diagnosis and implementation inside the broken repository</span></div>
-            <div class="level"><strong>Tests/runtime</strong><span>the final authority: Maven, Python test suites, TypeScript checks and production-style runtime reproduction</span></div>
+            <div class="level"><strong>Space Bunny</strong><span>independent diagnosis and implementation inside the broken repository</span></div>
+            <div class="level"><strong>Tests/runtime</strong><span>the final authority: the software must demonstrate that the repair works</span></div>
           </div>
         </div>
-        <div class="callout" style="margin-top:24px"><strong>The important part:</strong> AI was not treated as the evidence. The failing program and the passing verification were the evidence.</div>
+        <div class="callout" style="margin-top:24px"><strong>The important part:</strong> AI is part of the toolkit, not the product and not the evidence. The deliverable is the repaired software, the test result and a clear record of what changed.</div>
       </div>
     </section>
 
     <section id="cases">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Repair evidence</div><h2>Four different kinds of software failure.</h2></div><p>The cases deliberately span languages, frameworks and failure modes so the evidence is about problem-solving capability rather than familiarity with one stack.</p></div>
+        <div class="section-head"><div><div class="kicker">Repair evidence</div><h2>Four different kinds of software failure.</h2></div><p>The cases span languages, frameworks and failure modes. The point is not that one tool “knows everything”; it is that the same disciplined repair process can be applied to unfamiliar systems.</p></div>
 
         <div class="problem-grid" style="grid-template-columns:repeat(2,1fr)">
           <article class="problem">
@@ -67,7 +67,7 @@
             <h3>Google Gson — historical Java test repair</h3>
             <p><strong>Problem:</strong> a historical allocator-instantiation test used an assertion pattern that modern Error Prone identified as ignored assertion failure behaviour.</p>
             <p><strong>What we did:</strong> reconstructed the historical Java environment, confirmed the baseline behaviour, then gave the broken test state to the AI solver without the upstream answer.</p>
-            <p><strong>What the AI changed:</strong> replaced the try/fail/catch pattern with <code>assertThrows</code> and corrected the adjacent interface case.</p>
+            <p><strong>Repair:</strong> replaced the try/fail/catch pattern with <code>assertThrows</code> and corrected the adjacent interface case.</p>
             <div class="evidence-note"><strong>Result:</strong> target test passed and the repair pattern matched the later upstream implementation. <strong>Limitation:</strong> on this machine the defect surfaced as an Error Prone warning rather than the benchmark's fatal compile failure.</div>
           </article>
 
@@ -76,8 +76,8 @@
             <h3>Sonar CXX — executable-line expectation mismatch</h3>
             <p><strong>Problem:</strong> the test expected 23 executable lines but the implementation produced 55, causing a real failing test in a historical Maven/Java codebase.</p>
             <p><strong>What we did:</strong> recovered the old Java/Mockito runtime requirements, reproduced the exact 23-versus-55 failure, then handed the red state to the AI solver.</p>
-            <p><strong>What the AI changed:</strong> updated the expected executable-line count and list to the actual 55-line behaviour.</p>
-            <div class="evidence-note"><strong>Result:</strong> the target test passed and the repair matched upstream except for formatting. This case also showed why environment archaeology matters: an old Mockito/CGLIB stack needed Java module access before the real defect could even be seen.</div>
+            <p><strong>Repair:</strong> updated the expected executable-line count and list to the actual 55-line behaviour.</p>
+            <div class="evidence-note"><strong>Result:</strong> the target test passed and the repair matched upstream except for formatting. The case also showed why environment recovery matters: an old Mockito/CGLIB stack had to run correctly before the real defect could even be seen.</div>
           </article>
 
           <article class="problem">
@@ -85,8 +85,8 @@
             <h3>SymPy — subclass behaviour lost across operations</h3>
             <p><strong>Problem:</strong> a subclass of <code>Permutation</code> was created correctly, but inversion, exponentiation and multiplication returned the base <code>Permutation</code> type instead of preserving the subclass.</p>
             <p><strong>What we did:</strong> recreated the old Python environment, wrote a clean behavioural reproduction and let the AI solver repair the production implementation.</p>
-            <p><strong>What happened next:</strong> the first AI pass was useful but incomplete. Independent review found three gaps in construction semantics, exponentiation type handling and <code>rmul_with_af</code>. The AI was sent those gaps — not the upstream code — and corrected them.</p>
-            <div class="evidence-note"><strong>Result:</strong> the required subclass behaviour was restored and focused/wider tests passed apart from known pre-existing failures. This is the strongest example of why AI output still needs engineering review rather than automatic acceptance.</div>
+            <p><strong>Review mattered:</strong> the first AI pass was useful but incomplete. Independent review found three gaps in construction semantics, exponentiation type handling and <code>rmul_with_af</code>. The solver was given those gaps — not the upstream code — and corrected them.</p>
+            <div class="evidence-note"><strong>Result:</strong> the required subclass behaviour was restored and focused/wider tests passed apart from known pre-existing failures. This case demonstrates why the engineering value is not “press a button and trust AI”; it is diagnosis, review, correction and verification.</div>
           </article>
 
           <article class="problem">
@@ -94,8 +94,8 @@
             <h3>Next.js — production request-body race</h3>
             <p><strong>Problem:</strong> a production standalone Next.js path could let middleware/proxy code read a request body while a downstream Server Action later received incomplete JSON. The reproduced failure was <code>SyntaxError: Unexpected end of JSON input</code>.</p>
             <p><strong>What we did:</strong> fixed only the local standalone packaging needed to run the supplied reproduction, then captured the real red-state evidence: the proxy read 50,333 bytes and the downstream action crashed.</p>
-            <p><strong>What the AI diagnosed:</strong> a missing ordering guarantee around request-body replacement. The deliberately widened race was then used to stress the repair rather than relying on a lucky green run.</p>
-            <div class="evidence-note"><strong>Result:</strong> patched reproduction 5/5 successful requests; final build 15/15 successful requests; one 7.2 MB slow-streamed request returned 200; ESLint and <code>tsc --noEmit</code> were clean; no JSON parse error appeared in the server log. <strong>Limitation:</strong> the stock race is timing-sensitive and can pass when the window is very small; upstream repair comparison is deliberately kept separate until after solver evidence is frozen.</div>
+            <p><strong>Diagnosis:</strong> a missing ordering guarantee around request-body replacement. The deliberately widened race was used to stress the repair rather than relying on one lucky green run.</p>
+            <div class="evidence-note"><strong>Result:</strong> patched reproduction 5/5 successful requests; final build 15/15 successful requests; one 7.2 MB slow-streamed request returned 200; ESLint and <code>tsc --noEmit</code> were clean; no JSON parse error appeared in the server log. <strong>Limitation:</strong> the stock race is timing-sensitive and can pass when the window is very small; upstream repair comparison remains separate until solver evidence is frozen.</div>
           </article>
         </div>
       </div>
@@ -103,19 +103,41 @@
 
     <section id="commercial">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">What this proves</div><h2>Useful AI engineering is more than generating code.</h2></div><p>These cases show a repeatable way to turn AI coding tools into a supervised software-repair capability.</p></div>
-        <div class="proof-bar">
-          <div class="proof"><strong>Unfamiliar codebases</strong><span>work can begin from the failure and repository evidence rather than prior ownership of the code</span></div>
-          <div class="proof"><strong>Environment recovery</strong><span>old Java/Python/runtime constraints are separated from the actual software defect</span></div>
-          <div class="proof"><strong>Production debugging</strong><span>runtime races and cross-layer failures can be investigated, not just unit-test assertions</span></div>
-          <div class="proof"><strong>Human verification</strong><span>AI repairs are reviewed, challenged and tested before being treated as complete</span></div>
+        <div class="section-head"><div><div class="kicker">Software rescue</div><h2>You are not paying for access to AI. You are paying to get the software working again.</h2></div><p>Owning ChatGPT or another coding tool is not the same as taking responsibility for a broken system, finding the real cause and proving the repair.</p></div>
+
+        <div class="practice">
+          <div class="practice-panel">
+            <h3>What you hand over</h3>
+            <ul>
+              <li>The repository or codebase.</li>
+              <li>The failure, error, broken behaviour or failing test.</li>
+              <li>The environment and constraints that matter.</li>
+              <li>Anything that must not be changed or broken.</li>
+            </ul>
+          </div>
+          <div class="practice-panel">
+            <h3>What comes back</h3>
+            <ul>
+              <li>A reproduced and understood failure.</li>
+              <li>A focused repair rather than an unexplained rewrite.</li>
+              <li>Tests or runtime evidence showing what now works.</li>
+              <li>A record of what changed, what was checked and what remains uncertain.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="proof-bar" style="margin-top:28px">
+          <div class="proof"><strong>Unfamiliar codebases</strong><span>start from the failure and repository evidence rather than needing years of ownership</span></div>
+          <div class="proof"><strong>Environment recovery</strong><span>separate old runtime or dependency problems from the defect the customer actually cares about</span></div>
+          <div class="proof"><strong>Production debugging</strong><span>trace runtime races and cross-layer failures, not just obvious syntax errors</span></div>
+          <div class="proof"><strong>Verified delivery</strong><span>the repair is accepted because tests and runtime evidence support it, not because an AI said it looked right</span></div>
         </div>
 
         <div class="practice" style="margin-top:28px">
           <div class="practice-panel">
-            <h3>The commercial translation</h3>
-            <p style="color:var(--muted)">A customer does not need to buy “AI coding”. They need a broken software problem solved. The practical service is: give us the repository, the failure and the constraints; we reproduce it, isolate the cause, use AI tools to accelerate the repair, then return a tested patch and an evidence trail.</p>
-            <p><strong>Typical fit:</strong> existing SaaS bugs, API failures, database/query behaviour, framework regressions, failing tests, release-only failures, integration problems and inherited code nobody on the current team fully understands.</p>
+            <h3>Typical fit</h3>
+            <p style="color:var(--muted)">Existing SaaS bugs, API failures, database/query behaviour, framework regressions, failing tests, release-only failures, integration problems and inherited code nobody on the current team fully understands.</p>
+            <p><strong>The value is time and ownership:</strong> instead of spending a day or a week experimenting with prompts and patches, the problem is worked through as an engineering job with a defined outcome and evidence.</p>
           </div>
           <div class="practice-panel">
             <h3>What we are not claiming</h3>
@@ -125,7 +147,7 @@
               <li>Benchmarks are the same as maintaining a customer's production system.</li>
               <li>One successful repair proves expertise in every language or framework.</li>
             </ul>
-            <p style="color:var(--muted);margin-top:18px">The evidence supports a narrower and more useful claim: with access to the code, a reproducible failure and disciplined verification, AI tools can materially extend the range and speed of software problems one engineer can investigate and repair.</p>
+            <p style="color:var(--muted);margin-top:18px">The evidence supports a narrower and more useful claim: with access to the code, a reproducible failure and disciplined verification, modern AI tools can extend the range and speed of software problems that can be investigated — while responsibility for the final repair stays with the engineer.</p>
           </div>
         </div>
       </div>
@@ -144,6 +166,6 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Repair evidence update · 28 September 2026</span></div></footer>
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Software repair evidence · 28 September 2026</span></div></footer>
 </body>
 </html>
