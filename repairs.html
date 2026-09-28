@@ -54,6 +54,7 @@
           </div>
         </div>
         <div class="callout" style="margin-top:24px"><strong>The important part:</strong> AI is part of the toolkit, not the product and not the evidence. The deliverable is the repaired software, the test result and a clear record of what changed.</div>
+        <div class="callout" style="margin-top:16px"><strong>Upstream return rule:</strong> after the independent repair is frozen, check the originating project. If the defect is still open and the repair is not already present, prepare a focused upstream issue or pull request with the reproduction and verification evidence. If upstream has already fixed it, link the original issue and merged fix instead of claiming duplicate work.</div>
       </div>
     </section>
 
@@ -91,11 +92,12 @@
 
           <article class="problem">
             <div class="num">04</div>
-            <h3>Next.js — production request-body race</h3>
-            <p><strong>Problem:</strong> a production standalone Next.js path could let middleware/proxy code read a request body while a downstream Server Action later received incomplete JSON. The reproduced failure was <code>SyntaxError: Unexpected end of JSON input</code>.</p>
-            <p><strong>What we did:</strong> fixed only the local standalone packaging needed to run the supplied reproduction, then captured the real red-state evidence: the proxy read 50,333 bytes and the downstream action crashed.</p>
-            <p><strong>Diagnosis:</strong> a missing ordering guarantee around request-body replacement. The deliberately widened race was used to stress the repair rather than relying on one lucky green run.</p>
-            <div class="evidence-note"><strong>Result:</strong> patched reproduction 5/5 successful requests; final build 15/15 successful requests; one 7.2 MB slow-streamed request returned 200; ESLint and <code>tsc --noEmit</code> were clean; no JSON parse error appeared in the server log. <strong>Limitation:</strong> the stock race is timing-sensitive and can pass when the window is very small; upstream repair comparison remains separate until solver evidence is frozen.</div>
+            <h3>Next.js #85416 — production request-body race</h3>
+            <p><strong>Original report:</strong> <a href="https://github.com/vercel/next.js/issues/85416" target="_blank" rel="noopener">vercel/next.js issue #85416</a> described a timing-dependent race in Node.js middleware body cloning where a downstream Server Action could receive incomplete JSON.</p>
+            <p><strong>Problem reproduced:</strong> the proxy read 50,333 bytes while the downstream action failed with <code>SyntaxError: Unexpected end of JSON input</code>.</p>
+            <p><strong>What we did:</strong> fixed only the local standalone packaging needed to run the supplied reproduction, independently diagnosed the missing ordering guarantee around request-body finalisation/replacement, and deliberately widened the race window so the repair could be stress-tested instead of relying on one lucky green run.</p>
+            <div class="evidence-note"><strong>Independent verification result:</strong> patched reproduction 5/5 successful requests; final build 15/15 successful requests; one 7.2 MB slow-streamed request returned 200; ESLint and <code>tsc --noEmit</code> were clean; no JSON parse error appeared in the server log. <strong>Important limitation:</strong> the stock race is timing-sensitive and can pass when the window is very small.</div>
+            <p><strong>Upstream status:</strong> this was not a new HelpfulCo upstream fix. Next.js had already merged the corresponding fix in <a href="https://github.com/vercel/next.js/pull/85418" target="_blank" rel="noopener">PR #85418</a> on 14 November 2025, adding the required await before continuing. Our case is evidence that we independently reproduced the defect, arrived at the same ordering fix and verified it under stressed timing and slow-streamed input.</p>
           </article>
         </div>
       </div>
