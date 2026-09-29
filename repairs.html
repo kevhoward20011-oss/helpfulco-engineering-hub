@@ -30,7 +30,7 @@
     <section id="cases">
       <div class="container">
         <div class="section-head"><div><div class="kicker">Verified repair evidence</div><h2>Only cases with a reproduced failure, implemented repair and verification are listed here.</h2></div><p>Identifying a cause or proposing a mitigation does not count as a completed fix. Historical benchmark work is labelled as such.</p></div>
-        <div class="problem-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="problem-grid" style="grid-template-columns:repeat(3,1fr)">
           <article class="problem">
             <div class="num">01</div><h3>Next.js #85416 — request-body race</h3>
             <p><strong>Status:</strong> verified independent repair of a historical upstream bug.</p>
@@ -46,6 +46,14 @@
             <p><strong>Broken:</strong> the reconstructed historical <code>UnsafeAllocatorInstantiationTest#testAbstractClassInstantiation</code> case contained assertion behaviour that was later corrected upstream as part of Gson's Error Prone cleanup.</p>
             <div class="evidence-note"><strong>Our verification:</strong> the focused repaired test completed with 1 test run, 0 failures, 0 errors and Maven <strong>BUILD SUCCESS</strong> on 27 September 2026.</div>
             <p><strong>Public provenance:</strong> the relevant upstream change is present in <a href="https://github.com/google/gson/commit/dc20b7561af3a793e4945842040e956803b641c9" target="_blank" rel="noopener">google/gson commit dc20b756</a>. This case is presented only as a historical benchmark reconstruction and independently verified repair.</p>
+          </article>
+
+          <article class="problem">
+            <div class="num">03</div><h3>Sonar CXX #1203 — executable-line calculation</h3>
+            <p><strong>Status:</strong> verified independent repair of a historical Sonar CXX executable-lines defect.</p>
+            <p><strong>Broken:</strong> <code>CxxFileLinesVisitor</code> could count AST nodes outside the intended function-body scope as executable lines, producing incorrect coverage calculations.</p>
+            <div class="evidence-note"><strong>Our verification:</strong> the focused <code>CxxFileLinesVisitorTest#TestExecutableLinesOfCode</code> repair was verified under the era-appropriate Temurin Java 8 runtime: 1 test run, 0 failures, 0 errors, 0 skipped; <strong>Cxx :: Sensors SUCCESS</strong>; Maven <strong>BUILD SUCCESS</strong> on 29 September 2026.</div>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/SonarOpenCommunity/sonar-cxx/issues/1203" target="_blank" rel="noopener">SonarOpenCommunity/sonar-cxx issue #1203</a>. The original upstream issue was completed in 2017. This portfolio case claims independent reconstruction, repair and verification only — not authorship of the upstream fix.</p>
           </article>
         </div>
         <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> a case is added here only when the failure, repair and verification can all be defended. Investigations and diagnoses stay off the completed-repair list until a real fix exists.</div>
