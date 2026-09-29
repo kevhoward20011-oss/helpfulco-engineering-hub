@@ -29,7 +29,7 @@
 
     <section id="cases">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Verified repair evidence</div><h2>Only cases with a reproduced failure, implemented repair and verification are listed here.</h2></div><p>Identifying a cause, reproducing an old benchmark or proposing a mitigation does not count as a completed fix.</p></div>
+        <div class="section-head"><div><div class="kicker">Verified repair evidence</div><h2>Only cases with a reproduced failure, implemented repair and verification are listed here.</h2></div><p>Identifying a cause or proposing a mitigation does not count as a completed fix. Historical benchmark work is labelled as such.</p></div>
         <div class="problem-grid" style="grid-template-columns:repeat(2,1fr)">
           <article class="problem">
             <div class="num">01</div><h3>Next.js #85416 — request-body race</h3>
@@ -38,6 +38,14 @@
             <p><strong>Impact:</strong> production-style requests could fail even though the same path sometimes appeared healthy.</p>
             <div class="evidence-note"><strong>Our verification:</strong> repaired independently and stress-verified: 15/15 final requests successful, a 7.2 MB slow-streamed request returned 200, and static checks were clean.</div>
             <p><strong>Public provenance:</strong> <a href="https://github.com/vercel/next.js/issues/85416" target="_blank" rel="noopener">vercel/next.js issue #85416</a>. The upstream issue had already been fixed by Next.js in PR #85418. This portfolio case claims independent reproduction, repair and verification only — not authorship of the upstream fix.</p>
+          </article>
+
+          <article class="problem">
+            <div class="num">02</div><h3>Google Gson — historical TaRBench repair</h3>
+            <p><strong>Status:</strong> verified historical benchmark repair, not an open Google Gson issue.</p>
+            <p><strong>Broken:</strong> the reconstructed historical <code>UnsafeAllocatorInstantiationTest#testAbstractClassInstantiation</code> case contained assertion behaviour that was later corrected upstream as part of Gson's Error Prone cleanup.</p>
+            <div class="evidence-note"><strong>Our verification:</strong> the focused repaired test completed with 1 test run, 0 failures, 0 errors and Maven <strong>BUILD SUCCESS</strong> on 27 September 2026.</div>
+            <p><strong>Public provenance:</strong> the relevant upstream change is present in <a href="https://github.com/google/gson/commit/dc20b7561af3a793e4945842040e956803b641c9" target="_blank" rel="noopener">google/gson commit dc20b756</a>. This case is presented only as a historical benchmark reconstruction and independently verified repair.</p>
           </article>
         </div>
         <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> a case is added here only when the failure, repair and verification can all be defended. Investigations and diagnoses stay off the completed-repair list until a real fix exists.</div>
