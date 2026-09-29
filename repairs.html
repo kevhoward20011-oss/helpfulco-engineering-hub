@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Software Repair & Rescue | HelpfulCo Engineering Hub</title>
-  <meta name="description" content="Real software problems repaired and verified by HelpfulCo Innovations. See completed repair evidence or bring us a difficult software problem." />
+  <meta name="description" content="Verified software repair evidence from HelpfulCo Innovations. Only completed repairs with defensible reproduction and verification are published here." />
   <meta name="theme-color" content="#08131e" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -12,9 +12,9 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><div class="container nav">
     <a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Software repair · evidence, not promises</small></span></a>
-    <nav class="nav-links" aria-label="Primary"><a href="#cases">Completed repairs</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
+    <nav class="nav-links" aria-label="Primary"><a href="#cases">Verified repairs</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
   </div></header>
-  <div class="status-strip"><div class="container"><span class="dot"></span><span>Real repair cases · results and verification shown · internal repair methodology kept private</span></div></div>
+  <div class="status-strip"><div class="container"><span class="dot"></span><span>Evidence-only repair portfolio · diagnosis is not counted as a fix · unverified cases are not published</span></div></div>
 
   <main id="main">
     <section class="case-hero">
@@ -23,44 +23,24 @@
         <div class="kicker" style="margin-top:22px">Difficult bugs · inherited code · integrations · production failures</div>
         <h1 class="case-title">Got a software problem nobody has fixed?</h1>
         <p class="case-subtitle">Broken app. Persistent bug. Failed integration. AI-built software that almost works. A problem your team keeps working around. Send us the problem — we’ll investigate it.</p>
-        <div class="hero-actions"><a class="btn primary" href="#cases">See repairs we’ve completed ↓</a><a class="btn ghost" href="#send">Give us a problem →</a></div>
+        <div class="hero-actions"><a class="btn primary" href="#cases">See verified repair evidence ↓</a><a class="btn ghost" href="#send">Give us a problem →</a></div>
       </div>
     </section>
 
     <section id="cases">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Completed repair evidence</div><h2>Problems we have already taken apart and put right.</h2></div><p>Enough evidence to show the result. Not a tutorial on how we do the work.</p></div>
+        <div class="section-head"><div><div class="kicker">Verified repair evidence</div><h2>Only cases with a reproduced failure, implemented repair and verification are listed here.</h2></div><p>Identifying a cause, reproducing an old benchmark or proposing a mitigation does not count as a completed fix.</p></div>
         <div class="problem-grid" style="grid-template-columns:repeat(2,1fr)">
           <article class="problem">
             <div class="num">01</div><h3>Next.js #85416 — request-body race</h3>
+            <p><strong>Status:</strong> verified independent repair of a historical upstream bug.</p>
             <p><strong>Broken:</strong> a timing-dependent request-body race could leave a downstream Server Action with incomplete JSON.</p>
             <p><strong>Impact:</strong> production-style requests could fail even though the same path sometimes appeared healthy.</p>
-            <div class="evidence-note"><strong>Result:</strong> repaired independently and stress-verified: 15/15 final requests successful, a 7.2 MB slow-streamed request returned 200, and static checks were clean.</div>
-            <p><strong>Public context:</strong> <a href="https://github.com/vercel/next.js/issues/85416" target="_blank" rel="noopener">original issue #85416</a>. Next.js had already merged its own upstream correction in PR #85418; this case demonstrates independent diagnosis and verification rather than claiming the upstream fix.</p>
-          </article>
-
-          <article class="problem">
-            <div class="num">02</div><h3>Google Gson — historical Java test failure</h3>
-            <p><strong>Broken:</strong> a historical allocator-instantiation test contained assertion behaviour rejected by modern checking.</p>
-            <p><strong>Impact:</strong> the old test state no longer behaved cleanly in the reconstructed environment.</p>
-            <div class="evidence-note"><strong>Result:</strong> focused repair completed and the target test passed. The resulting repair pattern aligned with the later upstream implementation.</div>
-          </article>
-
-          <article class="problem">
-            <div class="num">03</div><h3>Sonar CXX — executable-line mismatch</h3>
-            <p><strong>Broken:</strong> a historical test expected 23 executable lines while the implementation produced 55.</p>
-            <p><strong>Impact:</strong> a genuine failing test in an older Java/Maven codebase, complicated by legacy runtime dependencies.</p>
-            <div class="evidence-note"><strong>Result:</strong> the defect was repaired and the target test passed. The result matched the upstream behaviour.</div>
-          </article>
-
-          <article class="problem">
-            <div class="num">04</div><h3>SymPy — subclass behaviour lost</h3>
-            <p><strong>Broken:</strong> operations on a Permutation subclass returned the base type, losing the subclass across inversion, exponentiation and multiplication.</p>
-            <p><strong>Impact:</strong> code relying on subclass behaviour could silently receive the wrong object type.</p>
-            <div class="evidence-note"><strong>Result:</strong> required subclass behaviour restored. Focused and wider checks passed apart from known pre-existing failures.</div>
+            <div class="evidence-note"><strong>Our verification:</strong> repaired independently and stress-verified: 15/15 final requests successful, a 7.2 MB slow-streamed request returned 200, and static checks were clean.</div>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/vercel/next.js/issues/85416" target="_blank" rel="noopener">vercel/next.js issue #85416</a>. The upstream issue had already been fixed by Next.js in PR #85418. This portfolio case claims independent reproduction, repair and verification only — not authorship of the upstream fix.</p>
           </article>
         </div>
-        <div class="callout" style="margin-top:24px"><strong>This portfolio grows.</strong> When we complete and verify another genuine repair, it is added here so customers can judge us by the problems already solved.</div>
+        <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> a case is added here only when the failure, repair and verification can all be defended. Investigations and diagnoses stay off the completed-repair list until a real fix exists.</div>
       </div>
     </section>
 
@@ -75,6 +55,6 @@
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Repair portfolio · updated 29 September 2026</span></div></footer>
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Repair portfolio · evidence reviewed 29 September 2026</span></div></footer>
 </body>
 </html>
