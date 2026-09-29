@@ -4,170 +4,77 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Software Repair & Rescue | HelpfulCo Engineering Hub</title>
-  <meta name="description" content="Evidence-led software repair cases showing how real defects were reproduced, diagnosed, repaired and verified, with AI tools used as part of a supervised engineering process." />
+  <meta name="description" content="Real software problems repaired and verified by HelpfulCo Innovations. See completed repair evidence or bring us a difficult software problem." />
   <meta name="theme-color" content="#08131e" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Kev Howard · engineering evidence</small></span></a>
-      <nav class="nav-links" aria-label="Primary"><a href="index.html#projects">Projects</a><a href="#method">Method</a><a href="#cases">Repair cases</a><a href="#commercial">Software rescue</a></nav>
-    </div>
-  </header>
-  <div class="status-strip"><div class="container"><span class="dot"></span><span>Verified repair evidence · broken state recorded before repair · reference answers kept separate until solver work finished</span></div></div>
+  <header class="site-header"><div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Software repair · evidence, not promises</small></span></a>
+    <nav class="nav-links" aria-label="Primary"><a href="#cases">Completed repairs</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
+  </div></header>
+  <div class="status-strip"><div class="container"><span class="dot"></span><span>Real repair cases · results and verification shown · internal repair methodology kept private</span></div></div>
 
   <main id="main">
     <section class="case-hero">
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Engineering Hub</a> / Software Repair & Rescue</div>
-        <div class="kicker" style="margin-top:22px">Software debugging · repair · verification · AI-assisted engineering</div>
-        <h1 class="case-title">Broken software in. Tested repair out.</h1>
-        <p class="case-subtitle">The customer problem is not “I need AI coding”. It is “something important is broken and I need it working again.” These cases show the process: reproduce the failure, isolate the cause, use modern engineering and AI tools where they help, then verify the repair before calling it done.</p>
-        <div class="case-status-row"><div class="status verified">● Four repair cases completed or verified against the reproduced failure</div><span class="evidence-date">Evidence updated 28 September 2026</span></div>
-        <div class="hero-actions"><a class="btn primary" href="#cases">See the repair evidence ↓</a><a class="btn ghost" href="#commercial">How software rescue works</a></div>
-      </div>
-    </section>
-
-    <section id="method">
-      <div class="container">
-        <div class="section-head"><div><div class="kicker">Why we did it</div><h2>Prove the repair process, not the tool.</h2></div><p>Anyone can open an AI coding tool. The useful question is whether a broken system can be understood, repaired and verified without blindly trusting the first answer.</p></div>
-        <div class="practice">
-          <div class="practice-panel">
-            <h3>The repair method</h3>
-            <ul>
-              <li><strong>Start from a real failure:</strong> use a known broken state from an established project.</li>
-              <li><strong>Reproduce it first:</strong> no repair attempt counts until the failure is visible locally.</li>
-              <li><strong>Protect the baseline:</strong> pin the commit and record the failure evidence.</li>
-              <li><strong>Keep the reference answer hidden:</strong> the coding agent works from the repository and failure evidence, not the upstream patch.</li>
-              <li><strong>Repair the smallest relevant surface:</strong> avoid unrelated refactors and dependency changes just to make the symptom disappear.</li>
-              <li><strong>Verify before accepting:</strong> rerun the focused failure, wider checks where practical, and record limitations honestly.</li>
-            </ul>
-          </div>
-          <div class="practice-panel">
-            <h3>Where AI fits</h3>
-            <div class="level"><strong>ChatGPT</strong><span>problem framing, environment reconstruction, review and evidence discipline</span></div>
-            <div class="level"><strong>OpenCode</strong><span>repository-level coding workflow and controlled repair environment</span></div>
-            <div class="level"><strong>Space Bunny</strong><span>independent diagnosis and implementation inside the broken repository</span></div>
-            <div class="level"><strong>Tests/runtime</strong><span>the final authority: the software must demonstrate that the repair works</span></div>
-          </div>
-        </div>
-        <div class="callout" style="margin-top:24px"><strong>The important part:</strong> AI is part of the toolkit, not the product and not the evidence. The deliverable is the repaired software, the test result and a clear record of what changed.</div>
-        <div class="callout" style="margin-top:16px"><strong>Upstream return rule:</strong> after the independent repair is frozen, check the originating project. If the defect is still open and the repair is not already present, prepare a focused upstream issue or pull request with the reproduction and verification evidence. If upstream has already fixed it, link the original issue and merged fix instead of claiming duplicate work.</div>
+        <div class="kicker" style="margin-top:22px">Difficult bugs · inherited code · integrations · production failures</div>
+        <h1 class="case-title">Got a software problem nobody has fixed?</h1>
+        <p class="case-subtitle">Broken app. Persistent bug. Failed integration. AI-built software that almost works. A problem your team keeps working around. Send us the problem — we’ll investigate it.</p>
+        <div class="hero-actions"><a class="btn primary" href="#cases">See repairs we’ve completed ↓</a><a class="btn ghost" href="#send">Give us a problem →</a></div>
       </div>
     </section>
 
     <section id="cases">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Repair evidence</div><h2>Four different kinds of software failure.</h2></div><p>The cases span languages, frameworks and failure modes. The point is not that one tool “knows everything”; it is that the same disciplined repair process can be applied to unfamiliar systems.</p></div>
-
+        <div class="section-head"><div><div class="kicker">Completed repair evidence</div><h2>Problems we have already taken apart and put right.</h2></div><p>Enough evidence to show the result. Not a tutorial on how we do the work.</p></div>
         <div class="problem-grid" style="grid-template-columns:repeat(2,1fr)">
           <article class="problem">
-            <div class="num">01</div>
-            <h3>Google Gson — historical Java test repair</h3>
-            <p><strong>Problem:</strong> a historical allocator-instantiation test used an assertion pattern that modern Error Prone identified as ignored assertion failure behaviour.</p>
-            <p><strong>What we did:</strong> reconstructed the historical Java environment, confirmed the baseline behaviour, then gave the broken test state to the AI solver without the upstream answer.</p>
-            <p><strong>Repair:</strong> replaced the try/fail/catch pattern with <code>assertThrows</code> and corrected the adjacent interface case.</p>
-            <div class="evidence-note"><strong>Result:</strong> target test passed and the repair pattern matched the later upstream implementation. <strong>Limitation:</strong> on this machine the defect surfaced as an Error Prone warning rather than the benchmark's fatal compile failure.</div>
+            <div class="num">01</div><h3>Next.js #85416 — request-body race</h3>
+            <p><strong>Broken:</strong> a timing-dependent request-body race could leave a downstream Server Action with incomplete JSON.</p>
+            <p><strong>Impact:</strong> production-style requests could fail even though the same path sometimes appeared healthy.</p>
+            <div class="evidence-note"><strong>Result:</strong> repaired independently and stress-verified: 15/15 final requests successful, a 7.2 MB slow-streamed request returned 200, and static checks were clean.</div>
+            <p><strong>Public context:</strong> <a href="https://github.com/vercel/next.js/issues/85416" target="_blank" rel="noopener">original issue #85416</a>. Next.js had already merged its own upstream correction in PR #85418; this case demonstrates independent diagnosis and verification rather than claiming the upstream fix.</p>
           </article>
 
           <article class="problem">
-            <div class="num">02</div>
-            <h3>Sonar CXX — executable-line expectation mismatch</h3>
-            <p><strong>Problem:</strong> the test expected 23 executable lines but the implementation produced 55, causing a real failing test in a historical Maven/Java codebase.</p>
-            <p><strong>What we did:</strong> recovered the old Java/Mockito runtime requirements, reproduced the exact 23-versus-55 failure, then handed the red state to the AI solver.</p>
-            <p><strong>Repair:</strong> updated the expected executable-line count and list to the actual 55-line behaviour.</p>
-            <div class="evidence-note"><strong>Result:</strong> the target test passed and the repair matched upstream except for formatting. The case also showed why environment recovery matters: an old Mockito/CGLIB stack had to run correctly before the real defect could even be seen.</div>
+            <div class="num">02</div><h3>Google Gson — historical Java test failure</h3>
+            <p><strong>Broken:</strong> a historical allocator-instantiation test contained assertion behaviour rejected by modern checking.</p>
+            <p><strong>Impact:</strong> the old test state no longer behaved cleanly in the reconstructed environment.</p>
+            <div class="evidence-note"><strong>Result:</strong> focused repair completed and the target test passed. The resulting repair pattern aligned with the later upstream implementation.</div>
           </article>
 
           <article class="problem">
-            <div class="num">03</div>
-            <h3>SymPy — subclass behaviour lost across operations</h3>
-            <p><strong>Problem:</strong> a subclass of <code>Permutation</code> was created correctly, but inversion, exponentiation and multiplication returned the base <code>Permutation</code> type instead of preserving the subclass.</p>
-            <p><strong>What we did:</strong> recreated the old Python environment, wrote a clean behavioural reproduction and let the AI solver repair the production implementation.</p>
-            <p><strong>Review mattered:</strong> the first AI pass was useful but incomplete. Independent review found three gaps in construction semantics, exponentiation type handling and <code>rmul_with_af</code>. The solver was given those gaps — not the upstream code — and corrected them.</p>
-            <div class="evidence-note"><strong>Result:</strong> the required subclass behaviour was restored and focused/wider tests passed apart from known pre-existing failures. This case demonstrates why the engineering value is not “press a button and trust AI”; it is diagnosis, review, correction and verification.</div>
+            <div class="num">03</div><h3>Sonar CXX — executable-line mismatch</h3>
+            <p><strong>Broken:</strong> a historical test expected 23 executable lines while the implementation produced 55.</p>
+            <p><strong>Impact:</strong> a genuine failing test in an older Java/Maven codebase, complicated by legacy runtime dependencies.</p>
+            <div class="evidence-note"><strong>Result:</strong> the defect was repaired and the target test passed. The result matched the upstream behaviour.</div>
           </article>
 
           <article class="problem">
-            <div class="num">04</div>
-            <h3>Next.js #85416 — production request-body race</h3>
-            <p><strong>Original report:</strong> <a href="https://github.com/vercel/next.js/issues/85416" target="_blank" rel="noopener">vercel/next.js issue #85416</a> described a timing-dependent race in Node.js middleware body cloning where a downstream Server Action could receive incomplete JSON.</p>
-            <p><strong>Problem reproduced:</strong> the proxy read 50,333 bytes while the downstream action failed with <code>SyntaxError: Unexpected end of JSON input</code>.</p>
-            <p><strong>What we did:</strong> fixed only the local standalone packaging needed to run the supplied reproduction, independently diagnosed the missing ordering guarantee around request-body finalisation/replacement, and deliberately widened the race window so the repair could be stress-tested instead of relying on one lucky green run.</p>
-            <div class="evidence-note"><strong>Independent verification result:</strong> patched reproduction 5/5 successful requests; final build 15/15 successful requests; one 7.2 MB slow-streamed request returned 200; ESLint and <code>tsc --noEmit</code> were clean; no JSON parse error appeared in the server log. <strong>Important limitation:</strong> the stock race is timing-sensitive and can pass when the window is very small.</div>
-            <p><strong>Upstream status:</strong> this was not a new HelpfulCo upstream fix. Next.js had already merged the corresponding fix in <a href="https://github.com/vercel/next.js/pull/85418" target="_blank" rel="noopener">PR #85418</a> on 14 November 2025, adding the required await before continuing. Our case is evidence that we independently reproduced the defect, arrived at the same ordering fix and verified it under stressed timing and slow-streamed input.</p>
+            <div class="num">04</div><h3>SymPy — subclass behaviour lost</h3>
+            <p><strong>Broken:</strong> operations on a Permutation subclass returned the base type, losing the subclass across inversion, exponentiation and multiplication.</p>
+            <p><strong>Impact:</strong> code relying on subclass behaviour could silently receive the wrong object type.</p>
+            <div class="evidence-note"><strong>Result:</strong> required subclass behaviour restored. Focused and wider checks passed apart from known pre-existing failures.</div>
           </article>
         </div>
+        <div class="callout" style="margin-top:24px"><strong>This portfolio grows.</strong> When we complete and verify another genuine repair, it is added here so customers can judge us by the problems already solved.</div>
       </div>
     </section>
 
-    <section id="commercial">
+    <section id="send">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Software rescue</div><h2>You are not paying for access to AI. You are paying to get the software working again.</h2></div><p>Owning ChatGPT or another coding tool is not the same as taking responsibility for a broken system, finding the real cause and proving the repair.</p></div>
-
+        <div class="section-head"><div><div class="kicker">Software rescue</div><h2>Give us the problem. Judge us by the result.</h2></div><p>You do not need to diagnose it for us. Tell us what is broken, what it is stopping you doing, and what must not be disturbed.</p></div>
         <div class="practice">
-          <div class="practice-panel">
-            <h3>What you hand over</h3>
-            <ul>
-              <li>The repository or codebase.</li>
-              <li>The failure, error, broken behaviour or failing test.</li>
-              <li>The environment and constraints that matter.</li>
-              <li>Anything that must not be changed or broken.</li>
-            </ul>
-          </div>
-          <div class="practice-panel">
-            <h3>What comes back</h3>
-            <ul>
-              <li>A reproduced and understood failure.</li>
-              <li>A focused repair rather than an unexplained rewrite.</li>
-              <li>Tests or runtime evidence showing what now works.</li>
-              <li>A record of what changed, what was checked and what remains uncertain.</li>
-            </ul>
-          </div>
+          <div class="practice-panel"><h3>Good problems to send</h3><ul><li>A bug that keeps coming back.</li><li>An app or AI-built project that is nearly working but stuck.</li><li>An API, database or integration failure.</li><li>A release-only or environment-specific failure.</li><li>Inherited code nobody wants to touch.</li><li>A difficult public issue your team has not had time to solve.</li></ul></div>
+          <div class="practice-panel"><h3>What you get</h3><ul><li>A focused investigation of the actual failure.</li><li>A repair where the evidence supports one.</li><li>Verification showing what now works.</li><li>Clear limitations where something remains uncertain.</li></ul><p style="margin-top:18px"><strong>No inflated claims. No mystery “AI says it works” hand-off.</strong></p></div>
         </div>
-
-        <div class="proof-bar" style="margin-top:28px">
-          <div class="proof"><strong>Unfamiliar codebases</strong><span>start from the failure and repository evidence rather than needing years of ownership</span></div>
-          <div class="proof"><strong>Environment recovery</strong><span>separate old runtime or dependency problems from the defect the customer actually cares about</span></div>
-          <div class="proof"><strong>Production debugging</strong><span>trace runtime races and cross-layer failures, not just obvious syntax errors</span></div>
-          <div class="proof"><strong>Verified delivery</strong><span>the repair is accepted because tests and runtime evidence support it, not because an AI said it looked right</span></div>
-        </div>
-
-        <div class="practice" style="margin-top:28px">
-          <div class="practice-panel">
-            <h3>Typical fit</h3>
-            <p style="color:var(--muted)">Existing SaaS bugs, API failures, database/query behaviour, framework regressions, failing tests, release-only failures, integration problems and inherited code nobody on the current team fully understands.</p>
-            <p><strong>The value is time and ownership:</strong> instead of spending a day or a week experimenting with prompts and patches, the problem is worked through as an engineering job with a defined outcome and evidence.</p>
-          </div>
-          <div class="practice-panel">
-            <h3>What we are not claiming</h3>
-            <ul>
-              <li>AI can solve every software problem.</li>
-              <li>A green first attempt should be trusted without review.</li>
-              <li>Benchmarks are the same as maintaining a customer's production system.</li>
-              <li>One successful repair proves expertise in every language or framework.</li>
-            </ul>
-            <p style="color:var(--muted);margin-top:18px">The evidence supports a narrower and more useful claim: with access to the code, a reproducible failure and disciplined verification, modern AI tools can extend the range and speed of software problems that can be investigated — while responsibility for the final repair stays with the engineer.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head"><div><div class="kicker">Evidence discipline</div><h2>Reference answers come last.</h2></div><p>The upstream or benchmark repair is used as an independent comparison only after the solver has finished. That keeps the case useful as evidence of diagnosis rather than answer copying.</p></div>
-        <div class="limits compact">
-          <div class="limit-card"><h3>Red state first</h3><p>Record the broken commit, local environment and exact failure before changing production code.</p></div>
-          <div class="limit-card"><h3>Solver separation</h3><p>Do not expose the gold patch or later upstream implementation to the coding agent during diagnosis.</p></div>
-          <div class="limit-card"><h3>Evidence after repair</h3><p>Keep the diff, test output, limitations and any gap between local reproduction and the original report visible.</p></div>
-        </div>
-        <div class="hero-actions" style="margin-top:28px"><a class="btn primary" href="index.html#projects">← Back to Engineering Hub</a></div>
+        <div class="hero-actions" style="margin-top:28px"><a class="btn primary" href="mailto:helpfulco.innovations.kev.uk@gmail.com?subject=Software%20repair%20enquiry">Send us your software problem →</a><a class="btn ghost" href="index.html">Back to Engineering Hub</a></div>
       </div>
     </section>
   </main>
-
-  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Software repair evidence · 28 September 2026</span></div></footer>
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Repair portfolio · updated 29 September 2026</span></div></footer>
 </body>
 </html>
