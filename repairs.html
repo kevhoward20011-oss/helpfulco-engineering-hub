@@ -55,6 +55,16 @@
             <div class="evidence-note"><strong>Our verification:</strong> the focused <code>CxxFileLinesVisitorTest#TestExecutableLinesOfCode</code> repair was verified under the era-appropriate Temurin Java 8 runtime: 1 test run, 0 failures, 0 errors, 0 skipped; <strong>Cxx :: Sensors SUCCESS</strong>; Maven <strong>BUILD SUCCESS</strong> on 29 September 2026.</div>
             <p><strong>Public provenance:</strong> <a href="https://github.com/SonarOpenCommunity/sonar-cxx/issues/1203" target="_blank" rel="noopener">SonarOpenCommunity/sonar-cxx issue #1203</a>. The original upstream issue was completed in 2017. This portfolio case claims independent reconstruction, repair and verification only — not authorship of the upstream fix.</p>
           </article>
+
+          <article class="problem">
+            <div class="num">04</div><h3>go-jsonnet #484 — Python binding post-fork deadlock</h3>
+            <p><strong>Status:</strong> verified independent repair of the reproduced deadlock behaviour; upstream issue remains open and this is not presented as an accepted upstream patch.</p>
+            <p><strong>Broken:</strong> after the Go runtime was initialised in a parent process, a Linux <code>fork()</code> child could enter <code>jsonnet_make()</code> with inherited runtime state whose supporting threads no longer existed. The result was a deterministic 0%-CPU hang.</p>
+            <p><strong>Repair:</strong> detect the unsafe post-fork process state before entering <code>jsonnet_make()</code>, then fail immediately with an actionable error instead of entering a Go runtime state that cannot safely recover.</p>
+            <div class="evidence-note"><strong>Our verification:</strong> the unpatched Linux case hung for 300+ seconds; the repaired path fails immediately. Regression matrix 4/4; full Python suite 14/14 on Linux and macOS; C-bindings compatibility 31/31; <code>go test ./...</code> reported no failures; normal <code>evaluate_snippet</code>, <code>evaluate_file</code>, <code>spawn</code> and parent-process operation all passed. No public ABI change.</div>
+            <p><strong>Environment lesson:</strong> macOS alone produced a false pass because the inherited Go runtime state differed. Linux verification exposed the earlier <code>jsonnet_make()</code> deadlock, so the final defence was moved ahead of that call.</p>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/google/go-jsonnet/issues/484" target="_blank" rel="noopener">google/go-jsonnet issue #484</a>. HelpfulCo's claim is limited to independent reproduction, repair and verification of the observed deadlock behaviour in the tested environments.</p>
+          </article>
         </div>
         <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> a case is added here only when the failure, repair and verification can all be defended. Investigations and diagnoses stay off the completed-repair list until a real fix exists.</div>
       </div>
@@ -71,6 +81,6 @@
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Repair portfolio · evidence reviewed 29 September 2026</span></div></footer>
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Repair portfolio · evidence reviewed 30 September 2026</span></div></footer>
 </body>
 </html>
