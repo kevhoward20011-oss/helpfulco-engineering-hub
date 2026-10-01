@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fresh Direction / Sovereign AI Governor | Engineering Case Study</title>
-  <meta name="description" content="Engineering evidence case study for the Fresh Direction / Sovereign AI Governor, including Gate 9 governed external action evidence and the current TRL 6 reassessment." />
+  <meta name="description" content="Engineering evidence case study for Fresh Direction / Sovereign AI Governor: Controlled Pilot Candidate, latest safe suite 1,423 passed, 2 skipped, 0 failed, with higher readiness claims locked pending Constitution lifecycle evidence." />
   <meta name="theme-color" content="#08131e" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Kev Howard · engineering evidence</small></span></a><nav class="nav-links"><a href="index.html#projects">Projects</a><a href="#architecture">Architecture</a><a href="#evidence">Evidence</a><a href="#limits">Limitations</a></nav></div></header>
-  <div class="status-strip"><div class="container"><span class="dot"></span><span>Gate 9 acceptance: PASS · TRL 6 reassessment: JUSTIFIED · production hardening remains outstanding</span></div></div>
+  <div class="status-strip"><div class="container"><span class="dot"></span><span>Controlled Pilot Candidate · 1,423 passed · 2 skipped · 0 failed · higher-readiness claims RED / LOCKED pending Constitution lifecycle evidence</span></div></div>
 
   <main id="main">
     <section class="case-hero">
@@ -21,12 +21,12 @@
         <h1 class="case-title">Fresh Direction /<br/>Sovereign AI Governor</h1>
         <p class="case-subtitle">A provider-neutral governance layer designed to keep AI proposals separate from execution authority. The engineering focus is explicit authority, evidence, human approval where required, hard execution boundaries, single-use permits, recovery and forensic evidence.</p>
         <div class="meta-grid">
-          <div class="meta"><label>Current gate position</label><strong>Gates 1–9</strong></div>
-          <div class="meta"><label>Latest acceptance</label><strong>Gate 9 PASS</strong></div>
-          <div class="meta"><label>TRL reassessment</label><strong>TRL 6 justified</strong></div>
-          <div class="meta"><label>Relevant environment evidence</label><strong>Windows host + Linux OCI external action</strong></div>
+          <div class="meta"><label>Current product status</label><strong>Controlled Pilot Candidate</strong></div>
+          <div class="meta"><label>Latest safe suite</label><strong>1,423 pass · 2 skip · 0 fail</strong></div>
+          <div class="meta"><label>TRL publication</label><strong>Numeric claim withheld</strong></div>
+          <div class="meta"><label>Current evidence boundary</label><strong>Gates 5–9 evidenced</strong></div>
         </div>
-        <div class="notice"><strong>Evidence rule:</strong> TRL 6 is an engineering reassessment based on an integrated prototype demonstrated in a relevant environment. It is not a certification, third-party assurance result or production-readiness claim. The remaining limitations are published below.</div>
+        <div class="notice"><strong>Evidence rule:</strong> the previous public TRL 6 reassessment is no longer asserted as the current whole-product claim. The latest readiness audit keeps higher-readiness claims RED / LOCKED until authoritative Constitution activation, reconstruction and rollback evidence is available. This is not a certification, third-party assurance result or production-readiness claim.</div>
       </div>
     </section>
 
@@ -34,7 +34,7 @@
       <div class="container">
         <div class="section-head"><div><div class="kicker">Architecture</div><h2>Authority before action.</h2></div><p>The design treats the AI as a proposer, not the authority. Permission to act is carried through a controlled path and bound to the exact governed action.</p></div>
         <div class="flow">
-          <span>Constitution Engine</span><b>→</b><span>Authority &amp; Evidence Decision</span><b>→</b><span>Human Authority where required</span><b>→</b><span>Hard Execution Boundary</span><b>→</b><span>Evidence &amp; Recovery</span><b>→</b><span>Change Certification</span>
+          <span>Constitution Engine</span><b>→</b><span>Authority &amp; Evidence Decision</span><b>→</b><span>Human Authority when required</span><b>→</b><span>Hard Execution Boundary</span><b>→</b><span>Evidence &amp; Recovery</span><b>→</b><span>Change Certification</span>
         </div>
         <div class="practice" style="margin-top:28px">
           <div class="practice-panel">
@@ -52,7 +52,7 @@
               <li><strong>Agent Passport:</strong> enforceable identity/scope is checked at action admission.</li>
               <li><strong>Lifecycle persistence:</strong> passport state is persisted and restored with fail-closed integrity checks.</li>
               <li><strong>Revocation:</strong> lifecycle authority can revoke a passport without granting execution authority.</li>
-              <li><strong>Gate 9 scope:</strong> the governed GitHub read requires <code>github:repository:read</code>; older active passport state must be re-provisioned or recreated to carry that scope.</li>
+              <li><strong>External-action scope:</strong> the bounded GitHub read requires <code>github:repository:read</code>; older active passport state must be re-provisioned or recreated to carry that scope.</li>
             </ul>
           </div>
         </div>
@@ -61,15 +61,15 @@
 
     <section id="evidence">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Latest verified work</div><h2>What the recent gates added.</h2></div><p>The public description stays at property level: what was demonstrated, what boundary was exercised and what remains unproven.</p></div>
+        <div class="section-head"><div><div class="kicker">Latest verified work</div><h2>What the current evidence supports.</h2></div><p>The public description stays at property level: what was demonstrated, what boundary was exercised and what remains unproven.</p></div>
         <div class="problem-grid">
-          <article class="problem"><div class="num">07</div><h3>Receipt persistence and restart integrity</h3><p>Execution receipts and their integrity state were hardened so recovery does not depend on one process lifetime. Receipt MAC verification remains fail-closed after restart and state reconstruction.</p><div class="evidence-note"><strong>Important finding retained:</strong> replacing the master secret surfaced as a receipt-MAC failure rather than a separate security-state-binding failure. The result still denied execution; the classification is kept visible instead of being smoothed away.</div><div class="status verified">● Gate evidence retained</div></article>
+          <article class="problem"><div class="num">07</div><h3>Receipt persistence and restart integrity</h3><p>Execution receipts and their integrity state were hardened so recovery does not depend on one process lifetime. Receipt verification remains fail-closed after restart and state reconstruction.</p><div class="evidence-note"><strong>Important finding retained:</strong> replacing the master secret surfaced as a receipt-integrity failure rather than a separate security-state-binding failure. The result still denied execution; the classification remains visible.</div><div class="status verified">● Gate evidence retained</div></article>
 
-          <article class="problem"><div class="num">08</div><h3>Durable review context</h3><p>The Decision Centre restart path was hardened so a consequential action waiting for human review can retain the context needed to validate the later decision rather than relying on ephemeral process state.</p><div class="evidence-note"><strong>Why it matters:</strong> an approval after restart must still refer to the same governed action, authority and review context. A stale or unverifiable review context must fail closed.</div><div class="status verified">● Restart/recovery assurance work</div></article>
+          <article class="problem"><div class="num">08</div><h3>Durable review context</h3><p>The Decision Centre restart path was hardened so a consequential action waiting for human review can retain the context needed to validate the later decision rather than relying on ephemeral process state.</p><div class="evidence-note"><strong>Why it matters:</strong> an approval after restart must still refer to the same governed action, authority and review context. A stale or unverifiable review context must fail closed.</div><div class="status verified">● Restart/recovery evidence retained</div></article>
 
-          <article class="problem"><div class="num">09</div><h3>Real governed external action in Linux OCI</h3><p>Gate 9 closed the external-network/container evidence gap by exercising a bounded GitHub repository read through the governed path inside a Linux OCI container.</p><div class="evidence-note"><strong>Acceptance:</strong> PASS. The action was constrained to the governed repository-read scope and evidence was independently re-checked against stable GitHub response fields and the recorded commit. This does not generalise Linux OCI proof to Windows-specific storage adapters.</div><div class="status verified">● Gate 9 PASS</div></article>
+          <article class="problem"><div class="num">09</div><h3>Governed external action in Linux OCI</h3><p>The external-network/container evidence gap was exercised with a bounded GitHub repository read through the governed path inside a Linux OCI container.</p><div class="evidence-note"><strong>Boundary:</strong> the action was constrained to the governed repository-read scope and evidence was re-checked against stable GitHub response fields and the recorded commit. This does not generalise Linux OCI proof to Windows-specific storage adapters.</div><div class="status verified">● Gate 9 evidence retained</div></article>
 
-          <article class="problem"><div class="num">TRL</div><h3>TRL 6 reassessment</h3><p>The current evidence supports the assessment that an integrated system/subsystem prototype has been demonstrated in a relevant environment, including a real governed external action, negative/failure paths, retained evidence and restart/recovery work.</p><div class="evidence-note"><strong>Current result:</strong> TRL 6 JUSTIFIED. This is separate from production readiness. Stronger claims still require operational hardening, external validation and independent assurance.</div><div class="status verified">● Evidence-based reassessment</div></article>
+          <article class="problem"><div class="num">NOW</div><h3>Controlled Pilot Candidate</h3><p>The latest readiness audit supports bounded controlled-pilot work, with GREEN-only operation and AMBER/RED fail-closed behaviour in the accepted pilot posture.</p><div class="evidence-note"><strong>Current boundary:</strong> authoritative Constitution activation, reconstruction and rollback evidence remains unresolved, so higher-readiness claims stay RED / LOCKED. Gate 10 integrated operational-governance proof remains pending.</div><div class="status verified">● Current bounded status</div></article>
         </div>
       </div>
     </section>
@@ -83,9 +83,9 @@
             <tr><td>Governance lifecycle</td><td>Constitution, authority/evidence decision and governed-action lifecycle</td><td>Separates recommendation from authority and gives unknown/missing evidence explicit fail-closed outcomes.</td></tr>
             <tr><td>Human authority</td><td>Decision Centre review context and restart/recovery tests</td><td>Consequential actions can remain <code>AWAITING_HUMAN</code> without approval becoming detached from the governed action after restart.</td></tr>
             <tr><td>Hard execution boundary</td><td>Decision/execution bridge, Hard Tool Gateway and permit controls</td><td>Approval is not itself execution; a separate controlled path authorises the exact action.</td></tr>
-            <tr><td>Receipt integrity</td><td>Persistent receipt key/state, MAC verification, reconstruction and replay controls</td><td>Execution evidence survives restart and rejects corrupted or unverifiable state.</td></tr>
+            <tr><td>Receipt integrity</td><td>Persistent receipt key/state, verification, reconstruction and replay controls</td><td>Execution evidence survives restart and rejects corrupted or unverifiable state.</td></tr>
             <tr><td>Agent Passport</td><td>Persistent lifecycle, reconstruction, revocation and action-admission evidence</td><td>Agent identity/scope is an enforceable runtime input rather than descriptive metadata.</td></tr>
-            <tr><td>External action</td><td>Gate 9 Linux OCI governed GitHub repository read</td><td>Demonstrates the governance path around a real bounded external network action in a relevant containerised environment.</td></tr>
+            <tr><td>External action</td><td>Linux OCI governed GitHub repository read</td><td>Demonstrates the governance path around a real bounded external network action in a relevant containerised environment.</td></tr>
             <tr><td>Verifier</td><td>Separately-run verification process with trusted local key custody</td><td>Provides a second verification pass over retained evidence; it is not claimed as third-party, externally anchored or independent-key-custody assurance.</td></tr>
           </tbody>
         </table>
@@ -94,38 +94,38 @@
 
     <section>
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Regression evidence</div><h2>Green is useful only when the caveats stay attached.</h2></div><p>The latest Gate 9 closeout reported a final full-suite pass. One earlier full-suite execution produced a transient failure in the Gate 6 wrong-origin negative test; it then passed in isolation, as the complete file, and in the final full suite.</p></div>
-        <div class="callout"><strong>Current publication rule:</strong> Gate 9 acceptance and the final green regression result are reported, but this page does not invent or restate an exact aggregate test count without the authoritative audit output in hand. The transient flake remains disclosed.</div>
+        <div class="section-head"><div><div class="kicker">Regression evidence</div><h2>The latest full safe suite is green.</h2></div><p>The current published checkpoint comes from the latest full safe-suite run rather than an older frozen count.</p></div>
+        <div class="callout"><strong>Latest verified safe suite:</strong> 1,425 collected · 1,423 passed · 2 skipped · 0 failed. Passing automated tests do not by themselves establish production readiness or close the Constitution lifecycle evidence gap.</div>
       </div>
     </section>
 
     <section id="limits">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Current limitations</div><h2>What TRL 6 does not mean.</h2></div><p>These constraints are part of the evidence, not footnotes to hide.</p></div>
+        <div class="section-head"><div><div class="kicker">Current limitations</div><h2>What the current pilot status does not mean.</h2></div><p>These constraints are part of the evidence, not footnotes to hide.</p></div>
         <div class="limits">
-          <div class="limit-card"><h3>External dependency remains bounded but real</h3><p>The GitHub demonstration currently depends on unauthenticated API/network availability and its approximate unauthenticated rate limit. No credential is used for that Gate 9 path.</p></div>
-          <div class="limit-card"><h3>Schema handling fails closed</h3><p>GitHub schema drift is constrained through a strict whitelist. Independent re-verification focuses on stable fields including repository ID, full name and the recorded commit rather than treating volatile metadata as a stable trust anchor.</p></div>
-          <div class="limit-card"><h3>Gate 9 did not exercise every subsystem</h3><p>The Constitution Engine was not exercised in the Gate 9 GREEN path. Gate 9 proves the scoped external-action path; it does not by itself re-prove every Governor component.</p></div>
+          <div class="limit-card"><h3>Constitution lifecycle gap remains open</h3><p>The authoritative production Constitution activation, reconstruction and rollback path is not yet evidenced to the level required for a higher-readiness claim.</p></div>
+          <div class="limit-card"><h3>Backup / restore is not claimed complete</h3><p>The current accepted pilot posture does not claim a completed production backup-and-restore capability.</p></div>
+          <div class="limit-card"><h3>External dependency remains bounded but real</h3><p>The GitHub demonstration depends on external API/network availability. The bounded Gate 9 path did not use credentials.</p></div>
+          <div class="limit-card"><h3>Gate 9 did not exercise every subsystem</h3><p>Gate 9 proves its scoped external-action path; it does not by itself re-prove every Governor component or the complete Constitution lifecycle.</p></div>
           <div class="limit-card"><h3>Verifier independence has limits</h3><p>The verifier is a separately-run process using trusted local key custody. It is not third-party verification, externally anchored verification or independent-key-custody verification.</p></div>
-          <div class="limit-card"><h3>Cross-platform evidence is specific</h3><p>Local Windows storage adapters still require a Windows execution host. Gate 9 addressed the external-network gap through Linux OCI and should not be presented as proof that Windows-specific adapters run in Linux.</p></div>
-          <div class="limit-card"><h3>Passport migration is explicit</h3><p>Existing states carrying an active Agent Passport from before Gate 9 need re-provisioning or a fresh state to receive the new <code>github:repository:read</code> scope.</p></div>
+          <div class="limit-card"><h3>Cross-platform evidence is specific</h3><p>Local Windows storage adapters still require a Windows execution host. Linux OCI evidence should not be presented as proof that Windows-specific adapters run in Linux.</p></div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Production readiness</div><h2>Production hardening is the next category of work — not evidence that Gate 9 failed.</h2></div><p>TRL and production readiness answer different questions. The prototype evidence can justify TRL 6 while the following operational controls remain unfinished.</p></div>
+        <div class="section-head"><div><div class="kicker">Readiness boundary</div><h2>Higher-readiness claims remain locked until the evidence closes the gap.</h2></div><p>The automated suite is strong, but test volume is not a substitute for the missing Constitution lifecycle proof.</p></div>
         <div class="practice">
-          <div class="practice-panel"><h3>Identity and key operations</h3><ul><li>Key and credential rotation.</li><li>Login throttling and lockout.</li><li>Multi-factor authentication.</li><li>Operational Agent Passport lifecycle tooling.</li></ul></div>
-          <div class="practice-panel"><h3>Infrastructure and external assurance</h3><ul><li>Secret-manager integration and in-path TLS.</li><li>External evidence/audit anchor.</li><li>Production observability and alerting.</li><li>Independent re-audit and stronger independent key custody.</li></ul></div>
+          <div class="practice-panel"><h3>Required proof before a higher claim</h3><ul><li>Authoritative Constitution activation path.</li><li>Constitution reconstruction after restart/recovery.</li><li>Rollback evidence that preserves the authority boundary.</li><li>Gate 10 integrated operational-governance proof.</li></ul></div>
+          <div class="practice-panel"><h3>Still separate from pilot evidence</h3><ul><li>Production backup and restore.</li><li>External evidence/audit anchoring.</li><li>Production observability and operational hardening.</li><li>Independent re-audit and stronger independent key custody.</li></ul></div>
         </div>
-        <div class="callout" style="margin-top:24px"><strong>Claims deliberately not made:</strong> production-ready, independently certified, third-party verified, externally anchored, or proven safe for unrestricted autonomous execution.</div>
+        <div class="callout" style="margin-top:24px"><strong>Claims deliberately not made:</strong> current whole-product TRL 6, production-ready, independently certified, third-party verified, externally anchored, or proven safe for unrestricted autonomous execution.</div>
         <div class="hero-actions" style="margin-top:28px"><a class="btn primary" href="index.html#projects">← Back to project set</a></div>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Governor evidence updated · 29 September 2026</span></div></footer>
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Governor evidence updated · 1 October 2026</span></div></footer>
 </body>
 </html>
