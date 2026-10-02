@@ -3,33 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Software Repair & Rescue | HelpfulCo Engineering Hub</title>
-  <meta name="description" content="Verified software repair evidence from HelpfulCo Innovations. Only completed repairs with defensible reproduction and verification are published here." />
+  <title>Fix Factory | HelpfulCo Engineering Hub</title>
+  <meta name="description" content="Fix Factory evidence from HelpfulCo Innovations: verified software fixes, verified solutions and clearly labelled upstream engineering work." />
   <meta name="theme-color" content="#08131e" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><div class="container nav">
-    <a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Software repair · evidence, not promises</small></span></a>
-    <nav class="nav-links" aria-label="Primary"><a href="#cases">Verified repairs</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
+    <a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Fix Factory · engineering evidence, not claims</small></span></a>
+    <nav class="nav-links" aria-label="Primary"><a href="#upstream">Recent upstream work</a><a href="#cases">Verified fixes</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
   </div></header>
-  <div class="status-strip"><div class="container"><span class="dot"></span><span>Evidence-only repair portfolio · diagnosis is not counted as a fix · unverified cases are not published</span></div></div>
+  <div class="status-strip"><div class="container"><span class="dot"></span><span>Fix Factory · reproduced is not fixed · patched is not fixed · verification decides the status</span></div></div>
 
   <main id="main">
     <section class="case-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Engineering Hub</a> / Software Repair & Rescue</div>
+        <div class="breadcrumb"><a href="index.html">Engineering Hub</a> / Fix Factory</div>
         <div class="kicker" style="margin-top:22px">Difficult bugs · inherited code · integrations · production failures</div>
-        <h1 class="case-title">Got a software problem nobody has fixed?</h1>
-        <p class="case-subtitle">Broken app. Persistent bug. Failed integration. AI-built software that almost works. A problem your team keeps working around. Send us the problem — we’ll investigate it.</p>
-        <div class="hero-actions"><a class="btn primary" href="#cases">See verified repair evidence ↓</a><a class="btn ghost" href="#send">Give us a problem →</a></div>
+        <h1 class="case-title">Difficult software problems. Evidence before claims.</h1>
+        <p class="case-subtitle">We reproduce the failure, isolate the cause, prepare the narrowest defensible solution and verify what we can. Where the last step depends on a maintainer, reporter, production system or specialist hardware, we say so plainly.</p>
+        <div class="hero-actions"><a class="btn primary" href="#upstream">See recent upstream work ↓</a><a class="btn ghost" href="#send">Give us a problem →</a></div>
+      </div>
+    </section>
+
+    <section id="upstream">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Recent Fix Factory work</div><h2>Several difficult defects moved forward within days of each other.</h2></div><p>The public record shows the outcome and evidence. Our internal investigation workflow, prompts and triage method stay private.</p></div>
+        <div class="callout" style="margin-bottom:24px"><strong>What happened:</strong> within a matter of days, HelpfulCo reproduced, investigated and submitted solutions or independent verification across major open-source projects. We deliberately separate a merged fix from a verified solution awaiting upstream adoption, and from independent verification of somebody else’s fix.</div>
+        <div class="problem-grid">
+          <article class="problem">
+            <div class="num">A</div><h3>Stripe Terminal React Native #1140 — intent-cache concurrency</h3>
+            <p><strong>Status:</strong> VERIFIED FIX ACCEPTED / MERGED.</p>
+            <p><strong>Broken:</strong> the Android React Native bridge used ordinary mutable intent caches across code paths that can run concurrently.</p>
+            <p><strong>Result:</strong> we reproduced the concurrency defect, implemented the narrow cache-synchronisation repair and added focused regression coverage.</p>
+            <div class="evidence-note"><strong>Verification:</strong> focused concurrency test 5/5 and stable across 10 runs; Android unit suite 233/233; JavaScript 238/238; iOS 166/166; clean diff check. Verification was JVM/unit-test level rather than a physical-device reproduction.</div>
+            <p><strong>Upstream outcome:</strong> Stripe collaborator review: <strong>APPROVED — “LGTM”</strong>. The PR was merged on 2 October 2026.</p>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/stripe/stripe-terminal-react-native/pull/1140" target="_blank" rel="noopener">stripe/stripe-terminal-react-native PR #1140</a>. Authored by kevhoward20011-oss / HelpfulCo Innovations Ltd.</p>
+          </article>
+
+          <article class="problem">
+            <div class="num">B</div><h3>Google go-jsonnet #484 — post-fork deadlock</h3>
+            <p><strong>Status:</strong> VERIFIED SOLUTION POSTED / UPSTREAM ADOPTION PENDING.</p>
+            <p><strong>Broken:</strong> after the Go runtime was initialised in a parent process, a Linux <code>fork()</code> child could enter inherited runtime state whose supporting threads no longer existed and hang indefinitely.</p>
+            <p><strong>Result:</strong> the repaired path detects the unsafe post-fork condition before entering <code>jsonnet_make()</code> and fails immediately with an actionable error rather than hanging.</p>
+            <div class="evidence-note"><strong>Verification:</strong> unpatched Linux case hung for 300+ seconds; repaired path fails immediately. Regression matrix 4/4; Python 14/14 on Linux and macOS; C-bindings compatibility 31/31; normal evaluation and spawn paths passed.</div>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/google/go-jsonnet/issues/484#issuecomment-5907250173" target="_blank" rel="noopener">HelpfulCo’s public technical submission on google/go-jsonnet #484</a>. The upstream issue remains open, so this is not presented as an accepted Google patch.</p>
+          </article>
+
+          <article class="problem">
+            <div class="num">C</div><h3>Vercel Eve #4024 — approved batch remains parked</h3>
+            <p><strong>Status:</strong> INDEPENDENT VERIFICATION POSTED — NOT OUR FIX.</p>
+            <p><strong>Broken:</strong> when two pending approval batches were approved together, one approved call could remain parked until another event woke the session.</p>
+            <p><strong>Our contribution:</strong> reproduced the stuck second batch on Windows, tightened the fixture to match production turn behaviour and checked the acceptance condition against Vercel’s #4027 fix direction.</p>
+            <div class="evidence-note"><strong>Evidence:</strong> the public submission links our evidence branch and commit so the reproduction and acceptance contract are independently inspectable.</div>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/vercel/eve/issues/4024#issuecomment-5947392140" target="_blank" rel="noopener">HelpfulCo independent verification on vercel/eve #4024</a>. We do not claim authorship of Vercel’s fix.</p>
+          </article>
+        </div>
+
+        <div class="practice" style="margin-top:24px">
+          <div class="practice-panel"><h3>How we label the work</h3><ul><li><strong>Reproduced</strong> — the failure has been demonstrated.</li><li><strong>Root cause identified</strong> — the causal path is understood.</li><li><strong>Patch prepared</strong> — a candidate repair exists.</li><li><strong>Locally verified</strong> — the repaired path has passed our verification.</li><li><strong>Upstream verification required</strong> — the final environment is outside our control.</li><li><strong>Upstream verified / accepted</strong> — the external project has confirmed or adopted the result.</li></ul></div>
+          <div class="practice-panel"><h3>Why the distinction matters</h3><p>Some defects require specialist hardware, closed components, production infrastructure or the original reporter’s environment. In those cases the correct engineering result may be a verified local solution plus a clearly defined upstream verification step.</p><p style="margin-top:18px"><strong>We do not turn “looks right” into “fixed”.</strong></p></div>
+        </div>
       </div>
     </section>
 
     <section id="cases">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Verified repair evidence</div><h2>Only cases with a reproduced failure, implemented repair and verification are listed here.</h2></div><p>Identifying a cause or proposing a mitigation does not count as a completed fix. Historical benchmark work is labelled as such.</p></div>
+        <div class="section-head"><div><div class="kicker">Verified repair evidence</div><h2>Completed cases with a reproduced failure, implemented repair and verification.</h2></div><p>Identifying a cause or proposing a mitigation does not count as a completed fix. Historical benchmark work is labelled as such.</p></div>
         <div class="problem-grid">
           <article class="problem">
             <div class="num">01</div><h3>Next.js #85416 — request-body race</h3>
@@ -65,22 +106,32 @@
             <p><strong>Environment lesson:</strong> macOS alone produced a false pass because the inherited Go runtime state differed. Linux verification exposed the earlier <code>jsonnet_make()</code> deadlock, so the final defence was moved ahead of that call.</p>
             <p><strong>Public provenance:</strong> <a href="https://github.com/google/go-jsonnet/issues/484" target="_blank" rel="noopener">google/go-jsonnet issue #484</a>. HelpfulCo's claim is limited to independent reproduction, repair and verification of the observed deadlock behaviour in the tested environments.</p>
           </article>
+
+          <article class="problem">
+            <div class="num">05</div><h3>Stripe Terminal React Native #1140 — concurrent intent caches</h3>
+            <p><strong>Status:</strong> verified HelpfulCo fix, reviewed by Stripe and merged upstream.</p>
+            <p><strong>Broken:</strong> in-memory PaymentIntent and SetupIntent caches in the Android React Native bridge were backed by ordinary mutable maps while bridge calls and Stripe SDK callbacks can access lifecycle state concurrently.</p>
+            <p><strong>Repair:</strong> use synchronised map wrappers and preserve the surrounding behaviour, with focused regression coverage for concurrent access.</p>
+            <div class="evidence-note"><strong>Our verification:</strong> focused test 5/5 passing and stable across 10 consecutive runs; Android 233/233; JavaScript 238/238; iOS 166/166; clean diff check. Stripe collaborator review approved the PR with “LGTM”, and it was merged.</div>
+            <p><strong>Scope:</strong> this claim is limited to the reproduced Android React Native bridge cache-concurrency defect. It does not claim to fix the separate native Android #747 issue, and no analogous iOS defect was reproduced.</p>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/stripe/stripe-terminal-react-native/pull/1140" target="_blank" rel="noopener">stripe/stripe-terminal-react-native PR #1140</a>.</p>
+          </article>
         </div>
-        <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> a case is added here only when the failure, repair and verification can all be defended. Investigations and diagnoses stay off the completed-repair list until a real fix exists.</div>
+        <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> the Engineering Hub reserves “fixed” for outcomes with defensible verification. Work that still depends on a maintainer, reporter, specialist hardware or production environment is published only with that limitation made explicit.</div>
       </div>
     </section>
 
     <section id="send">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Software rescue</div><h2>Give us the problem. Judge us by the result.</h2></div><p>You do not need to diagnose it for us. Tell us what is broken, what it is stopping you doing, and what must not be disturbed.</p></div>
+        <div class="section-head"><div><div class="kicker">Software rescue</div><h2>Your engineers know the system. Bring us the problem that is consuming their time.</h2></div><p>Fix Factory is designed as an escalation route for stubborn defects: difficult, intermittent, cross-stack or simply too expensive to keep circling internally.</p></div>
         <div class="practice">
           <div class="practice-panel"><h3>Good problems to send</h3><ul><li>A bug that keeps coming back.</li><li>An app or AI-built project that is nearly working but stuck.</li><li>An API, database or integration failure.</li><li>A release-only or environment-specific failure.</li><li>Inherited code nobody wants to touch.</li><li>A difficult public issue your team has not had time to solve.</li></ul></div>
-          <div class="practice-panel"><h3>What you get</h3><ul><li>A focused investigation of the actual failure.</li><li>A repair where the evidence supports one.</li><li>Verification showing what now works.</li><li>Clear limitations where something remains uncertain.</li></ul><p style="margin-top:18px"><strong>No inflated claims. No mystery “AI says it works” hand-off.</strong></p></div>
+          <div class="practice-panel"><h3>What you get</h3><ul><li>A focused investigation of the actual failure.</li><li>A repair or bounded solution where the evidence supports one.</li><li>Verification showing what now works.</li><li>A clearly stated next verification step where the final environment is outside our control.</li></ul><p style="margin-top:18px"><strong>No inflated claims. No mystery “AI says it works” hand-off.</strong></p></div>
         </div>
-        <div class="hero-actions" style="margin-top:28px"><a class="btn primary" href="mailto:helpfulco.innovations.kev.uk@gmail.com?subject=Software%20repair%20enquiry">Send us your software problem →</a><a class="btn ghost" href="index.html">Back to Engineering Hub</a></div>
+        <div class="hero-actions" style="margin-top:28px"><a class="btn primary" href="mailto:helpfulco.innovations.kev.uk@gmail.com?subject=Fix%20Factory%20software%20problem">Send us your software problem →</a><a class="btn ghost" href="index.html">Back to Engineering Hub</a></div>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Repair portfolio · evidence reviewed 30 September 2026</span></div></footer>
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Fix Factory evidence reviewed 2 October 2026</span></div></footer>
 </body>
 </html>
