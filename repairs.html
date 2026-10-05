@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fix Factory | HelpfulCo Engineering Hub</title>
-  <meta name="description" content="Fix Factory evidence from HelpfulCo Innovations: verified software fixes, verified solutions and clearly labelled upstream engineering work." />
+  <meta name="description" content="HelpfulCo Fix Factory: verified software repairs backed by reproduced failures, implemented changes and test evidence." />
   <meta name="theme-color" content="#08131e" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -12,7 +12,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><div class="container nav">
     <a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Fix Factory · engineering evidence, not claims</small></span></a>
-    <nav class="nav-links" aria-label="Primary"><a href="#upstream">Recent upstream work</a><a href="#cases">Verified fixes</a><a href="#closed">Closed</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
+    <nav class="nav-links" aria-label="Primary"><a href="#recent">Recent verified fixes</a><a href="#cases">Verified fixes</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
   </div></header>
   <div class="status-strip"><div class="container"><span class="dot"></span><span>Fix Factory · reproduced is not fixed · patched is not fixed · verification decides the status</span></div></div>
 
@@ -22,21 +22,21 @@
         <div class="breadcrumb"><a href="index.html">Engineering Hub</a> / Fix Factory</div>
         <div class="kicker" style="margin-top:22px">Difficult bugs · inherited code · integrations · production failures</div>
         <h1 class="case-title">Difficult software problems. Evidence before claims.</h1>
-        <p class="case-subtitle">We reproduce the failure, isolate the cause, prepare the narrowest defensible solution and verify what we can. Where the last step depends on a maintainer, reporter, production system or specialist hardware, we say so plainly.</p>
-        <div class="hero-actions"><a class="btn primary" href="#upstream">See recent upstream work ↓</a><a class="btn ghost" href="#send">Give us a problem →</a></div>
+        <p class="case-subtitle">Every repair published here has a reproduced failure, an implemented change and verification evidence. Investigations, no-go outcomes and unverified theories stay off this page.</p>
+        <div class="hero-actions"><a class="btn primary" href="#recent">See recent verified fixes ↓</a><a class="btn ghost" href="#send">Give us a problem →</a></div>
       </div>
     </section>
 
-    <section id="upstream">
+    <section id="recent">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Recent Fix Factory work</div><h2>Several difficult defects moved forward within days of each other.</h2></div><p>The public record shows the outcome and evidence. Our internal investigation workflow, prompts and triage method stay private.</p></div>
-        <div class="callout" style="margin-bottom:24px"><strong>What happened:</strong> within a matter of days, HelpfulCo reproduced, investigated and submitted solutions or independent verification across major open-source projects. We deliberately separate a merged fix from a verified solution awaiting upstream adoption, and from independent verification of somebody else’s fix.</div>
+        <div class="section-head"><div><div class="kicker">Recent Fix Factory work</div><h2>Verified fixes with public engineering evidence.</h2></div><p>The public record shows the defect, the repair and the evidence. Our internal investigation workflow, prompts and triage method stay private.</p></div>
+        <div class="callout" style="margin-bottom:24px"><strong>Publication rule:</strong> only work that has crossed the full line from reproduction to implemented repair to verification is shown here. Upstream merge status is reported separately from local verification.</div>
         <div class="problem-grid">
           <article class="problem">
             <div class="num">A</div><h3>Stripe Terminal React Native #1140 — intent-cache concurrency</h3>
             <p><strong>Status:</strong> VERIFIED FIX ACCEPTED / MERGED.</p>
             <p><strong>Broken:</strong> the Android React Native bridge used ordinary mutable intent caches across code paths that can run concurrently.</p>
-            <p><strong>Result:</strong> we reproduced the concurrency defect, implemented the narrow cache-synchronisation repair and added focused regression coverage.</p>
+            <p><strong>Repair:</strong> synchronise the cache maps while preserving the surrounding bridge behaviour and add focused regression coverage.</p>
             <div class="evidence-note"><strong>Verification:</strong> focused concurrency test 5/5 and stable across 10 runs; Android unit suite 233/233; JavaScript 238/238; iOS 166/166; clean diff check. Verification was JVM/unit-test level rather than a physical-device reproduction.</div>
             <p><strong>Upstream outcome:</strong> Stripe collaborator review: <strong>APPROVED — “LGTM”</strong>. The PR was merged on 2 October 2026.</p>
             <p><strong>Public provenance:</strong> <a href="https://github.com/stripe/stripe-terminal-react-native/pull/1140" target="_blank" rel="noopener">stripe/stripe-terminal-react-native PR #1140</a>. Authored by kevhoward20011-oss / HelpfulCo Innovations Ltd.</p>
@@ -44,33 +44,34 @@
 
           <article class="problem">
             <div class="num">B</div><h3>Google go-jsonnet #484 — post-fork deadlock</h3>
-            <p><strong>Status:</strong> VERIFIED SOLUTION POSTED / UPSTREAM ADOPTION PENDING.</p>
+            <p><strong>Status:</strong> VERIFIED REPAIR / UPSTREAM ADOPTION PENDING.</p>
             <p><strong>Broken:</strong> after the Go runtime was initialised in a parent process, a Linux <code>fork()</code> child could enter inherited runtime state whose supporting threads no longer existed and hang indefinitely.</p>
-            <p><strong>Result:</strong> the repaired path detects the unsafe post-fork condition before entering <code>jsonnet_make()</code> and fails immediately with an actionable error rather than hanging.</p>
-            <div class="evidence-note"><strong>Verification:</strong> unpatched Linux case hung for 300+ seconds; repaired path fails immediately. Regression matrix 4/4; Python 14/14 on Linux and macOS; C-bindings compatibility 31/31; normal evaluation and spawn paths passed.</div>
-            <p><strong>Public provenance:</strong> <a href="https://github.com/google/go-jsonnet/issues/484#issuecomment-5907250173" target="_blank" rel="noopener">HelpfulCo’s public technical submission on google/go-jsonnet #484</a>. The upstream issue remains open, so this is not presented as an accepted Google patch.</p>
+            <p><strong>Repair:</strong> detect the unsafe post-fork process state before entering <code>jsonnet_make()</code> and fail immediately with an actionable error rather than entering an unrecoverable runtime state.</p>
+            <div class="evidence-note"><strong>Verification:</strong> unpatched Linux case hung for 300+ seconds; repaired path fails immediately. Regression matrix 4/4; Python 14/14 on Linux and macOS; C-bindings compatibility 31/31; <code>go test ./...</code> reported no failures; normal evaluation and spawn paths passed.</div>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/google/go-jsonnet/issues/484#issuecomment-5907250173" target="_blank" rel="noopener">HelpfulCo public technical submission on google/go-jsonnet #484</a>. The upstream issue remains open, so this is not presented as an accepted Google patch.</p>
           </article>
 
           <article class="problem">
-            <div class="num">C</div><h3>Vercel Eve #4024 — approved batch remains parked</h3>
-            <p><strong>Status:</strong> INDEPENDENT VERIFICATION POSTED — NOT OUR FIX.</p>
-            <p><strong>Broken:</strong> when two pending approval batches were approved together, one approved call could remain parked until another event woke the session.</p>
-            <p><strong>Our contribution:</strong> reproduced the stuck second batch on Windows, tightened the fixture to match production turn behaviour and checked the acceptance condition against Vercel’s #4027 fix direction.</p>
-            <div class="evidence-note"><strong>Evidence:</strong> the public submission links our evidence branch and commit so the reproduction and acceptance contract are independently inspectable.</div>
-            <p><strong>Public provenance:</strong> <a href="https://github.com/vercel/eve/issues/4024#issuecomment-5947392140" target="_blank" rel="noopener">HelpfulCo independent verification on vercel/eve #4024</a>. We do not claim authorship of Vercel’s fix.</p>
+            <div class="num">C</div><h3>Cloudflare Pingora #931 / PR #1037 — cancelled cache lookup stale lock</h3>
+            <p><strong>Status:</strong> VERIFIED REPAIR / UPSTREAM PR OPEN.</p>
+            <p><strong>Broken:</strong> cancelling a cache-miss writer while its user lookup future was pending could leave a zero-permit per-key cache lock installed. Later requests for the same key could then remain blocked indefinitely.</p>
+            <p><strong>Repair:</strong> tie lock cleanup to an ownership guard whose <code>Drop</code> path releases only the exact lock instance it owns, including when the future is cancelled while awaiting the user lookup.</p>
+            <div class="evidence-note"><strong>Verification:</strong> the stale-lock failure was reproduced on the pre-patch implementation; the cancellation regression passes with the repair; the relevant <code>pingora-memory-cache</code> test suite passes; clean diff check passes. Additional regression coverage confirms stale cleanup cannot remove a newer writer's lock and normal completion still releases its own lock.</div>
+            <p><strong>Upstream status:</strong> PR #1037 is open and mergeable. The Hub claims the reproduced-and-verified repair only, not upstream acceptance.</p>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/cloudflare/pingora/issues/931" target="_blank" rel="noopener">cloudflare/pingora issue #931</a> · <a href="https://github.com/cloudflare/pingora/pull/1037" target="_blank" rel="noopener">HelpfulCo PR #1037</a>.</p>
           </article>
         </div>
 
         <div class="practice" style="margin-top:24px">
-          <div class="practice-panel"><h3>How we label the work</h3><ul><li><strong>Reproduced</strong> — the failure has been demonstrated.</li><li><strong>Root cause identified</strong> — the causal path is understood.</li><li><strong>Patch prepared</strong> — a candidate repair exists.</li><li><strong>Locally verified</strong> — the repaired path has passed our verification.</li><li><strong>Upstream verification required</strong> — the final environment is outside our control.</li><li><strong>Upstream verified / accepted</strong> — the external project has confirmed or adopted the result.</li></ul></div>
-          <div class="practice-panel"><h3>Why the distinction matters</h3><p>Some defects require specialist hardware, closed components, production infrastructure or the original reporter’s environment. In those cases the correct engineering result may be a verified local solution plus a clearly defined upstream verification step.</p><p style="margin-top:18px"><strong>We do not turn “looks right” into “fixed”.</strong></p></div>
+          <div class="practice-panel"><h3>What counts as verified here</h3><ul><li><strong>Failure reproduced</strong> — the reported behaviour has been demonstrated.</li><li><strong>Repair implemented</strong> — a bounded code change exists.</li><li><strong>Regression evidence</strong> — the repaired path is exercised by tests or repeatable checks.</li><li><strong>Compatibility checked</strong> — relevant surrounding behaviour is checked where practical.</li><li><strong>Upstream status stated separately</strong> — local verification is never presented as maintainer acceptance.</li></ul></div>
+          <div class="practice-panel"><h3>Why the distinction matters</h3><p>A promising diagnosis is not a fix. A patch that has not survived verification is not a fix. And a locally verified repair is not the same as an upstream merge.</p><p style="margin-top:18px"><strong>We do not turn “looks right” into “fixed”.</strong></p></div>
         </div>
       </div>
     </section>
 
     <section id="cases">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Verified repair evidence</div><h2>Completed cases with a reproduced failure, implemented repair and verification.</h2></div><p>Identifying a cause or proposing a mitigation does not count as a completed fix. Historical benchmark work is labelled as such.</p></div>
+        <div class="section-head"><div><div class="kicker">Verified repair evidence</div><h2>Completed cases with reproduced failure, implemented repair and verification.</h2></div><p>Historical benchmark work is explicitly labelled. No investigation-only or no-go entries appear in this portfolio.</p></div>
         <div class="problem-grid">
           <article class="problem">
             <div class="num">01</div><h3>Next.js #85416 — request-body race</h3>
@@ -99,10 +100,10 @@
 
           <article class="problem">
             <div class="num">04</div><h3>go-jsonnet #484 — Python binding post-fork deadlock</h3>
-            <p><strong>Status:</strong> verified independent repair of the reproduced deadlock behaviour; upstream issue remains open and this is not presented as an accepted upstream patch.</p>
+            <p><strong>Status:</strong> verified independent repair of the reproduced deadlock behaviour; upstream issue remains open.</p>
             <p><strong>Broken:</strong> after the Go runtime was initialised in a parent process, a Linux <code>fork()</code> child could enter <code>jsonnet_make()</code> with inherited runtime state whose supporting threads no longer existed. The result was a deterministic 0%-CPU hang.</p>
-            <p><strong>Repair:</strong> detect the unsafe post-fork process state before entering <code>jsonnet_make()</code>, then fail immediately with an actionable error instead of entering a Go runtime state that cannot safely recover.</p>
-            <div class="evidence-note"><strong>Our verification:</strong> the unpatched Linux case hung for 300+ seconds; the repaired path fails immediately. Regression matrix 4/4; full Python suite 14/14 on Linux and macOS; C-bindings compatibility 31/31; <code>go test ./...</code> reported no failures; normal <code>evaluate_snippet</code>, <code>evaluate_file</code>, <code>spawn</code> and parent-process operation all passed. No public ABI change.</div>
+            <p><strong>Repair:</strong> detect the unsafe post-fork process state before entering <code>jsonnet_make()</code>, then fail immediately with an actionable error.</p>
+            <div class="evidence-note"><strong>Our verification:</strong> unpatched Linux case hung for 300+ seconds; repaired path fails immediately. Regression matrix 4/4; full Python suite 14/14 on Linux and macOS; C-bindings compatibility 31/31; <code>go test ./...</code> reported no failures; normal <code>evaluate_snippet</code>, <code>evaluate_file</code>, <code>spawn</code> and parent-process operation all passed. No public ABI change.</div>
             <p><strong>Environment lesson:</strong> macOS alone produced a false pass because the inherited Go runtime state differed. Linux verification exposed the earlier <code>jsonnet_make()</code> deadlock, so the final defence was moved ahead of that call.</p>
             <p><strong>Public provenance:</strong> <a href="https://github.com/google/go-jsonnet/issues/484" target="_blank" rel="noopener">google/go-jsonnet issue #484</a>. HelpfulCo's claim is limited to independent reproduction, repair and verification of the observed deadlock behaviour in the tested environments.</p>
           </article>
@@ -116,27 +117,17 @@
             <p><strong>Scope:</strong> this claim is limited to the reproduced Android React Native bridge cache-concurrency defect. It does not claim to fix the separate native Android #747 issue, and no analogous iOS defect was reproduced.</p>
             <p><strong>Public provenance:</strong> <a href="https://github.com/stripe/stripe-terminal-react-native/pull/1140" target="_blank" rel="noopener">stripe/stripe-terminal-react-native PR #1140</a>.</p>
           </article>
-        </div>
-        <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> the Engineering Hub reserves “fixed” for outcomes with defensible verification. Work that still depends on a maintainer, reporter, specialist hardware or production environment is published only with that limitation made explicit.</div>
-      </div>
-    </section>
 
-    <section id="closed">
-      <div class="container">
-        <div class="section-head"><div><div class="kicker">Closed without monetisation</div><h2>Investigated, evidenced and closed. No claim of a fix, and no payout.</h2></div><p>Some candidate work is closed rather than completed. We publish those outcomes too, because a documented no-go is a real engineering result and an honest one.</p></div>
-        <div class="problem-grid">
           <article class="problem">
-            <div class="num">06</div><h3>Crypto.com HackerOne — scope-first screening, no eligible path</h3>
-            <p><strong>Status:</strong> CLOSED / NO-GO / UNMONETISABLE. Read-only investigation only.</p>
-            <p><strong>Candidate:</strong> a Crypto.com HackerOne bounty slot, screened against the live programme before any code work began.</p>
-            <p><strong>Outcome:</strong> the programme itself was verified live and paying, with a working submission route. The candidate repository could not be tied to a listed in-scope asset, and no published reward table applied to it, so no defensible paid path existed.</p>
-            <p><strong>Secondary review:</strong> a source-only review of the two explicitly in-scope token-contract assets produced one credible, high-confidence code-level observation, described here at a non-actionable level: a valuation rate is maintained by a single privileged role with only a non-zero validity check and no magnitude, deviation or freshness bound.</p>
-            <div class="evidence-note"><strong>Why it is not a submission:</strong> there is no unprivileged attacker path. Any use of that observation depends on a privileged role key or an operational fault, which places it in the programme&rsquo;s explicitly ineligible theoretical and best-practice-only categories, alongside its privileged-role trust model. A second in-scope chain asset could not be resolved to any publicly verified source and remains unresolved rather than clean. The privileged-key and upgrade-authority design for the reviewed contract is already described in public third-party documentation, so related claims carry high duplicate risk.</div>
-            <p><strong>Compliance:</strong> the candidate repository remained clean and untouched throughout &mdash; no files modified, no dependencies installed, no branches, no commits. No submission, disclosure, public comment or contact with the programme owner. No probing, scanning or enumeration of programme infrastructure. No wallet use, credentials or account access. No transactions and no contract interaction of any kind. No fix was implemented, because nothing was bounty-eligible.</p>
-            <p><strong>Publication rule:</strong> this entry is deliberately sanitised. It contains no exploit steps, no proof-of-concept, no reproduction detail and no abuse-enabling instructions, consistent with the coordinated-disclosure terms of the upstream project.</p>
+            <div class="num">06</div><h3>Cloudflare Pingora #931 — cancellation-safe cache-lock cleanup</h3>
+            <p><strong>Status:</strong> verified HelpfulCo repair; PR #1037 remains open upstream.</p>
+            <p><strong>Broken:</strong> a cancelled cache-miss writer could leave its per-key coalescing lock behind with zero permits while the user lookup was still pending, blocking later same-key requests.</p>
+            <p><strong>Repair:</strong> introduce a cancellation-safe ownership guard whose <code>Drop</code> path wakes waiters and removes only the lock instance owned by that writer.</p>
+            <div class="evidence-note"><strong>Our verification:</strong> pre-patch stale-lock behaviour reproduced; repaired cancellation regression passes; relevant <code>pingora-memory-cache</code> test suite passes; clean diff check passes; dedicated coverage confirms an old guard cannot remove a newer writer's lock and that a normally completing writer still releases its own lock.</div>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/cloudflare/pingora/issues/931" target="_blank" rel="noopener">cloudflare/pingora issue #931</a> · <a href="https://github.com/cloudflare/pingora/pull/1037" target="_blank" rel="noopener">PR #1037</a>. Upstream acceptance is not claimed while the PR remains open.</p>
           </article>
         </div>
-        <div class="callout" style="margin-top:24px"><strong>Why this is published:</strong> a slot that cannot be monetised should be released and reallocated rather than quietly dropped. Recording the scope evidence, the code finding and the reason for closure is more useful to a future reviewer than an empty folder.</div>
+        <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> the Engineering Hub reserves “fixed” for outcomes with defensible verification. If work has not reached that standard, it is not listed here.</div>
       </div>
     </section>
 
@@ -145,12 +136,12 @@
         <div class="section-head"><div><div class="kicker">Software rescue</div><h2>Your engineers know the system. Bring us the problem that is consuming their time.</h2></div><p>Fix Factory is designed as an escalation route for stubborn defects: difficult, intermittent, cross-stack or simply too expensive to keep circling internally.</p></div>
         <div class="practice">
           <div class="practice-panel"><h3>Good problems to send</h3><ul><li>A bug that keeps coming back.</li><li>An app or AI-built project that is nearly working but stuck.</li><li>An API, database or integration failure.</li><li>A release-only or environment-specific failure.</li><li>Inherited code nobody wants to touch.</li><li>A difficult public issue your team has not had time to solve.</li></ul></div>
-          <div class="practice-panel"><h3>What you get</h3><ul><li>A focused investigation of the actual failure.</li><li>A repair or bounded solution where the evidence supports one.</li><li>Verification showing what now works.</li><li>A clearly stated next verification step where the final environment is outside our control.</li></ul><p style="margin-top:18px"><strong>No inflated claims. No mystery “AI says it works” hand-off.</strong></p></div>
+          <div class="practice-panel"><h3>What you get</h3><ul><li>A focused investigation of the actual failure.</li><li>A repair where the evidence supports one.</li><li>Verification showing what now works.</li><li>A clearly stated limitation where part of the final environment is outside our control.</li></ul><p style="margin-top:18px"><strong>No inflated claims. No mystery “AI says it works” hand-off.</strong></p></div>
         </div>
         <div class="hero-actions" style="margin-top:28px"><a class="btn primary" href="mailto:helpfulco.innovations.kev.uk@gmail.com?subject=Fix%20Factory%20software%20problem">Send us your software problem →</a><a class="btn ghost" href="index.html">Back to Engineering Hub</a></div>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Fix Factory evidence reviewed 2 October 2026</span></div></footer>
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Verified Fix Factory evidence reviewed 5 October 2026</span></div></footer>
 </body>
 </html>
