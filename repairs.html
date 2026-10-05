@@ -12,7 +12,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><div class="container nav">
     <a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Fix Factory · engineering evidence, not claims</small></span></a>
-    <nav class="nav-links" aria-label="Primary"><a href="#upstream">Recent upstream work</a><a href="#cases">Verified fixes</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
+    <nav class="nav-links" aria-label="Primary"><a href="#upstream">Recent upstream work</a><a href="#cases">Verified fixes</a><a href="#closed">Closed</a><a href="#send">Send us a problem</a><a href="index.html#projects">Other work</a></nav>
   </div></header>
   <div class="status-strip"><div class="container"><span class="dot"></span><span>Fix Factory · reproduced is not fixed · patched is not fixed · verification decides the status</span></div></div>
 
@@ -118,6 +118,25 @@
           </article>
         </div>
         <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> the Engineering Hub reserves “fixed” for outcomes with defensible verification. Work that still depends on a maintainer, reporter, specialist hardware or production environment is published only with that limitation made explicit.</div>
+      </div>
+    </section>
+
+    <section id="closed">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Closed without monetisation</div><h2>Investigated, evidenced and closed. No claim of a fix, and no payout.</h2></div><p>Some candidate work is closed rather than completed. We publish those outcomes too, because a documented no-go is a real engineering result and an honest one.</p></div>
+        <div class="problem-grid">
+          <article class="problem">
+            <div class="num">06</div><h3>Crypto.com HackerOne — scope-first screening, no eligible path</h3>
+            <p><strong>Status:</strong> CLOSED / NO-GO / UNMONETISABLE. Read-only investigation only.</p>
+            <p><strong>Candidate:</strong> a Crypto.com HackerOne bounty slot, screened against the live programme before any code work began.</p>
+            <p><strong>Outcome:</strong> the programme itself was verified live and paying, with a working submission route. The candidate repository could not be tied to a listed in-scope asset, and no published reward table applied to it, so no defensible paid path existed.</p>
+            <p><strong>Secondary review:</strong> a source-only review of the two explicitly in-scope token-contract assets produced one credible, high-confidence code-level observation, described here at a non-actionable level: a valuation rate is maintained by a single privileged role with only a non-zero validity check and no magnitude, deviation or freshness bound.</p>
+            <div class="evidence-note"><strong>Why it is not a submission:</strong> there is no unprivileged attacker path. Any use of that observation depends on a privileged role key or an operational fault, which places it in the programme&rsquo;s explicitly ineligible theoretical and best-practice-only categories, alongside its privileged-role trust model. A second in-scope chain asset could not be resolved to any publicly verified source and remains unresolved rather than clean. The privileged-key and upgrade-authority design for the reviewed contract is already described in public third-party documentation, so related claims carry high duplicate risk.</div>
+            <p><strong>Compliance:</strong> the candidate repository remained clean and untouched throughout &mdash; no files modified, no dependencies installed, no branches, no commits. No submission, disclosure, public comment or contact with the programme owner. No probing, scanning or enumeration of programme infrastructure. No wallet use, credentials or account access. No transactions and no contract interaction of any kind. No fix was implemented, because nothing was bounty-eligible.</p>
+            <p><strong>Publication rule:</strong> this entry is deliberately sanitised. It contains no exploit steps, no proof-of-concept, no reproduction detail and no abuse-enabling instructions, consistent with the coordinated-disclosure terms of the upstream project.</p>
+          </article>
+        </div>
+        <div class="callout" style="margin-top:24px"><strong>Why this is published:</strong> a slot that cannot be monetised should be released and reallocated rather than quietly dropped. Recording the scope evidence, the code finding and the reason for closure is more useful to a future reviewer than an empty folder.</div>
       </div>
     </section>
 
