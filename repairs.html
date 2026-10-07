@@ -63,12 +63,12 @@
 
           <article class="problem">
             <div class="num">D</div><h3>Hedera Guardian VM0010 #5941 — Eq. (7) BCEF_R parameter</h3>
-            <p><strong>Status:</strong> VERIFIED LOCAL REPAIR / UPSTREAM SUBMISSION PENDING.</p>
+            <p><strong>Status:</strong> VERIFIED REPAIR / UPSTREAM PR OPEN.</p>
             <p><strong>Broken:</strong> the Section 8.1.2 Equation (7) implementation and schema path needed to represent <code>BCEF_R</code> as the methodology's distinct positive biomass conversion and expansion multiplier, without incorrectly applying the <code>CF_j</code> upper bound to it.</p>
             <p><strong>Repair:</strong> wire <code>bcefR</code> consistently through the calculation logic, input/output schemas and documentation while preserving <code>CF_j</code> as a separate factor bounded to <code>(0,1]</code>.</p>
             <div class="evidence-note"><strong>Verification:</strong> focused post-commit Node test 9/9 PASS; independent hand-computation check included; <code>BCEF_R &gt; 0</code> and not capped at 1; <code>CF_j</code> remains bounded to <code>(0,1]</code>; commit contains exactly the five authorised VM0010 files. ACM0010 and CLEAR were untouched.</div>
-            <p><strong>Local evidence:</strong> commit <code>06ad4499aa41f8d4620764ddd1e17f812cb5c07b</code>, message <code>fix(vm0010): correct Eq. (7) BCEF_R parameter</code>. The commit has not yet been pushed upstream.</p>
-            <p><strong>Public provenance:</strong> <a href="https://github.com/hashgraph/guardian/issues/5941" target="_blank" rel="noopener">hashgraph/guardian issue #5941 — VM0010 v1.4</a>. No upstream acceptance is claimed.</p>
+            <p><strong>Submission:</strong> commit <code>06ad4499aa41f8d4620764ddd1e17f812cb5c07b</code>, message <code>fix(vm0010): correct Eq. (7) BCEF_R parameter</code>, is submitted upstream in Guardian PR #7107.</p>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/hashgraph/guardian/issues/5941" target="_blank" rel="noopener">hashgraph/guardian issue #5941 — VM0010 v1.4</a> · <a href="https://github.com/hashgraph/guardian/pull/7107" target="_blank" rel="noopener">HelpfulCo PR #7107</a>. Upstream acceptance is not claimed while the PR remains open.</p>
           </article>
         </div>
 
@@ -139,12 +139,12 @@
 
           <article class="problem">
             <div class="num">07</div><h3>Hedera Guardian VM0010 #5941 — Equation (7) BCEF_R correction</h3>
-            <p><strong>Status:</strong> locally verified HelpfulCo repair; upstream submission pending.</p>
+            <p><strong>Status:</strong> verified HelpfulCo repair; PR #7107 is open upstream.</p>
             <p><strong>Defect:</strong> VM0010 v1.4 Section 8.1.2 Equation (7) required a consistent <code>BCEF_R</code> parameter path across calculation logic and schemas. <code>BCEF_R</code> is a positive biomass conversion and expansion multiplier and must not inherit the <code>(0,1]</code> bound that belongs to <code>CF_j</code>.</p>
             <p><strong>Repair:</strong> use <code>bcefR</code> in the Eq. (7) calculation, require and expose it consistently in the relevant schemas, and document the correction in the VM0010 README slice.</p>
             <div class="evidence-note"><strong>Our verification:</strong> focused post-commit suite 9/9 PASS; Eq. (7) matches independent hand-computation; <code>BCEF_R</code> is validated as <code>&gt; 0</code> and is not capped at 1; <code>CF_j</code> remains bounded to <code>(0,1]</code>. The final commit contains exactly five authorised VM0010 files, with no ACM0010 or CLEAR changes and no unrelated files committed.</div>
-            <p><strong>Local commit:</strong> <code>06ad4499aa41f8d4620764ddd1e17f812cb5c07b</code>. It remains local at the time of this publication, so the Hub does not claim upstream review, merge or acceptance.</p>
-            <p><strong>Public provenance:</strong> <a href="https://github.com/hashgraph/guardian/issues/5941" target="_blank" rel="noopener">hashgraph/guardian issue #5941 — VM0010: Improved Forest Management, Conversion from Logged to Protected Forest (v1.4)</a>.</p>
+            <p><strong>Submitted commit:</strong> <code>06ad4499aa41f8d4620764ddd1e17f812cb5c07b</code> is now upstream in PR #7107. The Hub claims the verified repair and submission only, not maintainer acceptance or bounty award.</p>
+            <p><strong>Public provenance:</strong> <a href="https://github.com/hashgraph/guardian/issues/5941" target="_blank" rel="noopener">hashgraph/guardian issue #5941 — VM0010: Improved Forest Management, Conversion from Logged to Protected Forest (v1.4)</a> · <a href="https://github.com/hashgraph/guardian/pull/7107" target="_blank" rel="noopener">HelpfulCo PR #7107</a>.</p>
           </article>
         </div>
         <div class="callout" style="margin-top:24px"><strong>Publication rule:</strong> the Engineering Hub reserves “fixed” for outcomes with defensible verification. If work has not reached that standard, it is not listed here.</div>
