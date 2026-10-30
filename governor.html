@@ -10,7 +10,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Kev Howard · engineering evidence</small></span></a><nav class="nav-links"><a href="index.html#projects">Projects</a><a href="#architecture">Architecture</a><a href="#evidence">Evidence</a><a href="#limits">Limitations</a></nav></div></header>
+  <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark">H</span><span>HelpfulCo Engineering Hub<small>Kev Howard · engineering evidence</small></span></a><nav class="nav-links"><a href="index.html#projects">Projects</a><a href="#architecture">Architecture</a><a href="#evidence">Evidence</a><a href="#security-testing">Security Testing</a><a href="#limits">Limitations</a></nav></div></header>
   <div class="status-strip"><div class="container"><span class="dot"></span><span>Controlled Pilot Candidate · 1,423 passed · 2 skipped · 0 failed · higher-readiness claims RED / LOCKED pending Constitution lifecycle evidence</span></div></div>
 
   <main id="main">
@@ -74,6 +74,23 @@
       </div>
     </section>
 
+    <section id="security-testing" aria-labelledby="security-testing-title">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Security testing · evidence review 28 October 2026</div><h2 id="security-testing-title">We test the boundary, not just the AI's answer.</h2></div><p>Fresh Direction is being evaluated against attempts to perform actions without the authority the Governor is designed to require. The important question is whether a denied action was actually prevented downstream, not whether the screen displayed “blocked”.</p></div>
+        <div class="callout"><strong>Current assurance position:</strong> implemented gateway controls, automated test history and bounded real-tool demonstrations are documented. Further adversarial testing was reported as started during the week of 26 October, but independently checked results from the current OptiPlex installation are not yet available in the repository. No universal agent containment, independent penetration-test certification or production readiness is claimed.</div>
+        <div class="problem-grid" style="margin-top:28px">
+          <article class="problem"><div class="num">01</div><h3>Evidence already recorded</h3><p>Scoped tests and demonstrations cover action-bound gateway authorisation, approval and receipt controls, restart/recovery paths, a blocked out-of-root Windows filesystem request, and a governed GitHub sandbox action.</p><div class="evidence-note"><strong>What this establishes:</strong> specific protected paths can be exercised and evidenced. It does not prove every possible agent action is forced through the gateway.</div><div class="status verified">● Scoped engineering evidence</div></article>
+          <article class="problem"><div class="num">02</div><h3>Adversarial checks under investigation</h3><p>The test plan targets forged, expired and replayed approvals; authority or policy changes; alternate tool, credential, filesystem and network routes; and recovery or revocation races.</p><div class="evidence-note"><strong>Key question:</strong> can an agent reach the same protected resource directly, outside the governed execution path? This is a test hypothesis, not a confirmed successful bypass.</div><div class="status wip">● Additional results pending</div></article>
+          <article class="problem"><div class="num">03</div><h3>Next assurance steps</h3><p>Reconcile the current OptiPlex build, repeat the negative-path tests with independent downstream observation, then progress to scripted multi-agent contention and model-driven adversarial scenarios inside an isolated environment.</p><div class="evidence-note"><strong>Future objective:</strong> obtain a scoped independent security review with clearly reported findings, fixes, residual risks and re-test evidence. No such certification is claimed today.</div><div class="status wip">● Planned verification</div></article>
+        </div>
+        <div class="practice" style="margin-top:28px">
+          <div class="practice-panel"><h3>What a meaningful test records</h3><ul><li>The exact build, scenario, agent permissions and attempted action.</li><li>What the Governor decided and which execution route was used.</li><li>What actually happened at the protected resource, checked independently of the Governor's message.</li><li>Whether the result is reproducible, plus what remains untested or uncertain.</li></ul></div>
+          <div class="practice-panel"><h3>Safe, transparent disclosure</h3><ul><li>Public updates describe the scope, outcomes and limitations of verified testing.</li><li>Detailed exploit paths, active credentials and sensitive containment weaknesses are not exposed on the public site.</li><li>Testing stays in controlled, authorised environments using synthetic targets rather than customer systems.</li><li>A denial log alone is never counted as proof that an unauthorised action was stopped.</li></ul></div>
+        </div>
+        <p style="margin-top:24px;color:var(--muted)">This is an engineering testing programme, not a security certification or a published bug-bounty offer. See <a href="#evidence">the evidence summary</a> and <a href="#limits">current limitations</a> for the boundaries of the claims.</p>
+      </div>
+    </section>
+
     <section>
       <div class="container">
         <div class="section-head"><div><div class="kicker">Evidence chain</div><h2>Selected current implementation areas.</h2></div><p>The underlying Governor repository remains private; these are the implementation concerns the current assurance work is built around.</p></div>
@@ -126,6 +143,6 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Governor evidence updated · 1 October 2026</span></div></footer>
+  <footer class="footer"><div class="container footer-row"><span>HelpfulCo Engineering Hub · Kev Howard</span><span>Governor page updated · 30 October 2026 · evidence dates noted in sections</span></div></footer>
 </body>
 </html>
